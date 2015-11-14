@@ -20,5 +20,15 @@ namespace TextBasedGameEngine.Player
             get;
             set;
         }
+
+        int Power
+        {
+            get;
+        }
+
+        int Magic
+        {
+            get;
+        }
     }
 }

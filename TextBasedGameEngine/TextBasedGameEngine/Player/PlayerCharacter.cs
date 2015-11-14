@@ -11,11 +11,15 @@ namespace TextBasedGameEngine.Player
     {
         private Location playerLocation;
         private int health;
+        private int power;
+        private int magic;
 
         public PlayerCharacter()
         {
             playerLocation = new Location(0, 0);
-            health = 3;
+            health = 100;
+            power = 20;
+            magic = 16;
         }
 
         public int Health
@@ -28,6 +32,18 @@ namespace TextBasedGameEngine.Player
         {
             get { return playerLocation; }
             set { playerLocation = value; }
+        }
+
+
+        public int Power
+        {
+            get { return power; }
+        }
+
+
+        public int Magic
+        {
+            get { return magic; }
         }
     }
 }

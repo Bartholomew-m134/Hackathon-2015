@@ -42,6 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BattleHandling\BattleHandler.cs" />
+    <Compile Include="BattleHandling\BattleParser.cs" />
+    <Compile Include="Enemy\IEnemy.cs" />
+    <Compile Include="Enemy\Goblin.cs" />
     <Compile Include="Player\IPlayer.cs" />
     <Compile Include="InputParser.cs" />
     <Compile Include="Reader.cs" />
@@ -52,6 +56,7 @@
     <Compile Include="Tiles\ITile.cs" />
     <Compile Include="Tiles\SampleTile.cs" />
     <Compile Include="Tiles\TileController.cs" />
+    <Compile Include="Utilities\BattleCommandList.cs" />
     <Compile Include="Utilities\InputCommandList.cs" />
     <Compile Include="Utilities\Location.cs" />
     <Compile Include="Writer.cs" />
@@ -59,9 +64,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="NewFolder1\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
