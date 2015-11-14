@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TextBasedGameEngine.Player;
 
 namespace TextBasedGameEngine.Tiles
 {
@@ -12,17 +13,17 @@ namespace TextBasedGameEngine.Tiles
         {
         }
 
-        public void Attack()
+        public void Attack(IPlayer player)
         {
             Writer.OutputNotAvailableCommand();
         }
 
-        public void Shop()
+        public void Shop(IPlayer player)
         {
             Writer.OutputNotAvailableCommand();
         }
 
-        public void Look()
+        public void Look(IPlayer player)
         {
             Writer.OutputNotAvailableCommand();
         }

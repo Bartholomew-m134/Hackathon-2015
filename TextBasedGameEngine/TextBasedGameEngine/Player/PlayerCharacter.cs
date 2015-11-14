@@ -7,12 +7,12 @@ using TextBasedGameEngine.Utilities;
 
 namespace TextBasedGameEngine.Player
 {
-    public class Player : IPlayer
+    public class PlayerCharacter : IPlayer
     {
         private Location playerLocation;
         private int health;
 
-        public Player()
+        public PlayerCharacter()
         {
             playerLocation.X = 0;
             playerLocation.Y = 0;
