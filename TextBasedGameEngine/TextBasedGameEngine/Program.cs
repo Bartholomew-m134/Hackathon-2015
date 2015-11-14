@@ -11,6 +11,8 @@ namespace TextBasedGameEngine
     {
         static void Main(string[] args)
         {
+            TileController.Load();
+
             while(true)
                 Reader.ReadInput();
         }
