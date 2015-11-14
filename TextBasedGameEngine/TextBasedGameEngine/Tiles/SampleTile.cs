@@ -14,12 +14,12 @@ namespace TextBasedGameEngine.Tiles
 
         public void Attack()
         {
-            Writer.Write("No nearby enemies\n.");
+            Writer.OutputNotAvailableCommand();
         }
 
         public void Shop()
         {
-            Writer.Write("No nearby shops\n.");
+            Writer.OutputNotAvailableCommand();
         }
     }
 }
