@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TextBasedGameEngine.Tiles;
 using TextBasedGameEngine.Utilities;
 
 namespace TextBasedGameEngine
@@ -21,7 +22,7 @@ namespace TextBasedGameEngine
             }
             else if (input.Equals(InputCommandList.SHOP, StringComparison.CurrentCultureIgnoreCase))
             {
-                TileControler.Shop();
+                TileController.Shop();
             }
             else if (input.Equals(InputCommandList.HELP, StringComparison.CurrentCultureIgnoreCase))
             {
