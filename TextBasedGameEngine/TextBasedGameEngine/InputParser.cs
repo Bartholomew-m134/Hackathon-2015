@@ -31,6 +31,10 @@ namespace TextBasedGameEngine
                 foreach (string command in list)
                     Writer.WriteLine(command);
             }
+            else
+            {
+                Writer.OutputInvalidCommand();
+            }
         }
     }
 }

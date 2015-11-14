@@ -8,7 +8,7 @@ namespace TextBasedGameEngine
 {
     public static class Reader
     {
-        public static void Read()
+        public static void ReadInput()
         {
             string input = Console.ReadLine();
             if (input != null && !input.Equals(""))

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TextBasedGameEngine.Tiles;
 
 namespace TextBasedGameEngine
 {
@@ -10,6 +11,8 @@ namespace TextBasedGameEngine
     {
         static void Main(string[] args)
         {
+            while(true)
+                Reader.ReadInput();
         }
     }
 }
