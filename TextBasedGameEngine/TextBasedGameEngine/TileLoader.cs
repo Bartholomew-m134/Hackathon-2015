@@ -1,41 +1,76 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TextBasedGameEngine.Player;
 using TextBasedGameEngine.Tiles;
+using TextBasedGameEngine.Utilities;
 
 namespace TextBasedGameEngine
 {
     public static class TileLoader
     {
-        public static ITile MoveNorth(IPlayer player, ITile tile)
+        public static Dictionary<KeyValuePair<int,int>, ITile> Load(string filename)
         {
-            int nextYPosition = player.Position.Y - 1;
-            ITile nextTile = tile;
-            return nextTile;
+            string directory = AppDomain.CurrentDomain.BaseDirectory + "\\Content\\" + filename + ".csv";
+            List<string[]> tileList = ParseFile(GetFileContents(directory));
+            return CreateNewTiles(tileList);
         }
 
-        public static ITile MoveSouth(IPlayer player, ITile tile)
+        private static List<string[]> ParseFile(List<string> fileContents)
         {
-            int nextYPosition = player.Position.Y + 1;
-            ITile nextTile = tile;
-            return nextTile;
+            List<string[]> parsedObjects = new List<string[]>();
+
+            foreach (string line in fileContents)
+                parsedObjects.Add(line.Split(','));
+
+            return parsedObjects;
         }
 
-        public static ITile MoveWest(IPlayer player, ITile tile)
+        private static List<string> GetFileContents(string directory)
         {
-            int nextXPosition = player.Position.X - 1;
-            ITile nextTile = tile;
-            return nextTile;
+            List<string> fileContents = new List<string>();
+            StreamReader reader = new StreamReader(directory);
+
+            try
+            {
+                do
+                    fileContents.Add(reader.ReadLine());
+                while (reader.Peek() != -1);
+            }
+            catch
+            {
+                Console.WriteLine("File Was Not Loaded\n");
+            }
+            finally
+            {
+                reader.Close();
+            }
+
+            return fileContents;
         }
 
-        public static ITile MoveEast(IPlayer player, ITile tile)
+        private static Dictionary<KeyValuePair<int,int>, ITile> CreateNewTiles(List<string[]> tileList)
         {
-            int nextXPosition = player.Position.X + 1;
-            ITile nextTile = tile;
-            return nextTile;
+            Dictionary<KeyValuePair<int,int>, ITile> tiles = new Dictionary<KeyValuePair<int,int>,ITile>();
+
+            for (int i = 0; i < tileList.Count - 1; i++ )
+            {
+                for (int j = 0; j < tileList[i].Length - 1; j++)
+                {
+                    ITile tile = null;
+
+                    if (tileList[i][j].Equals("SampleTile"))
+                        tile = new SampleTile();
+
+                    if(tile != null)
+                        tiles.Add(new KeyValuePair<int,int>(i+1,j+1), tile);
+                }
+            }
+
+            return tiles;
         }
     }
 }

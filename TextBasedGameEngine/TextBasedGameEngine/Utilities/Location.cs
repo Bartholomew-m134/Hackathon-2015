@@ -28,5 +28,10 @@ namespace TextBasedGameEngine.Utilities
             get { return yLocation; }
             set { yLocation = value; }
         }
+
+        public KeyValuePair<int, int> ConvertToPair()
+        {
+            return new KeyValuePair<int, int>(xLocation, yLocation);
+        }
     }
 }
