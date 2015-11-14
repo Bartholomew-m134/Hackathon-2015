@@ -21,5 +21,10 @@ namespace TextBasedGameEngine.Tiles
         {
             Writer.OutputNotAvailableCommand();
         }
+
+        public void Look()
+        {
+            Writer.OutputNotAvailableCommand();
+        }
     }
 }

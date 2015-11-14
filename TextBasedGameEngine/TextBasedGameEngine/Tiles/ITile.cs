@@ -8,10 +8,8 @@ namespace TextBasedGameEngine.Tiles
 {
     public interface ITile
     {
-        void Look();
-
         void Attack();
         void Shop();
-
+        void Look();
     }
 }
