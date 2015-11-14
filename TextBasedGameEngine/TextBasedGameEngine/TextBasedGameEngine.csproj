@@ -45,11 +45,12 @@
     <Compile Include="Player\IPlayer.cs" />
     <Compile Include="Player\Player.cs" />
     <Compile Include="InputParser.cs" />
-    <Compile Include="InputReader.cs" />
+    <Compile Include="Reader.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tiles\ITile.cs" />
     <Compile Include="Tiles\SampleTile.cs" />
+    <Compile Include="Utilities\InputCommandList.cs" />
     <Compile Include="Utilities\Location.cs" />
     <Compile Include="Writer.cs" />
   </ItemGroup>
