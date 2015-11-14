@@ -9,39 +9,40 @@ namespace TextBasedGameEngine.Tiles
 {
     public static class TileController
     {
-        private IPlayer player = new PlayerCharacter();
-        private ITile tile = new SampleTile();
-        public void Attack()
+        private static IPlayer player = new PlayerCharacter();
+        private static ITile tile = new SampleTile();
+
+        public static void Attack()
         {
             tile.Attack(player);
         }
 
-        public void Shop()
+        public static void Shop()
         {
             tile.Shop(player);
         }
 
-        public void Look()
+        public static  void Look()
         {
             tile.Look(player);
         }
 
-        public void MoveNorth()
+        public static void MoveNorth()
         {
             //Fill in later.
         }
 
-        public void MoveSouth()
+        public static void MoveSouth()
         {
             //Fill in later.
         }
 
-        public void MoveWest()
+        public static void MoveWest()
         {
             //Fill in later.
         }
 
-        public void MoveEast()
+        public static void MoveEast()
         {
             //Fill in later.
         }
