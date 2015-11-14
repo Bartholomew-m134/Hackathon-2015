@@ -10,17 +10,16 @@ namespace TextBasedGameEngine.Tiles
     {
         public SampleTile()
         {
-
         }
 
         public void Attack()
         {
-            Writer.Write();
+            Writer.Write("No nearby enemies\n.");
         }
 
         public void Shop()
         {
-            Writer.Write();
+            Writer.Write("No nearby shops\n.");
         }
     }
 }
