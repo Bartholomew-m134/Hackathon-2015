@@ -37,7 +37,6 @@ namespace TextBasedGameEngine.BattleHandling
                 Writer.ClearScreen();
                 Writer.WriteLine("Player has been defeated.");
                 TileController.Load();
-                TileController.Look();
             }
             else
             {
