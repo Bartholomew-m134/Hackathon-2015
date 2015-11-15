@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TextBasedGameEngine.Interfaces;
 
 namespace TextBasedGameEngine.Enemy
 {
@@ -43,6 +44,12 @@ namespace TextBasedGameEngine.Enemy
             {
                 health -= 5;
             }
+        }
+
+        public void Attack(IPlayer player)
+        {
+            player.Health -= power;
+            player.StatusEffect = true;
         }
     }
 }

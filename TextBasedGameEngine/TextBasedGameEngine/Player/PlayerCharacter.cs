@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TextBasedGameEngine.Utilities;
+using TextBasedGameEngine.Interfaces;
 
 namespace TextBasedGameEngine.Player
 {
@@ -14,6 +15,7 @@ namespace TextBasedGameEngine.Player
         private int maxHealth;
         private int power;
         private int magic;
+        private bool statusEffect;
 
         public PlayerCharacter()
         {
@@ -52,6 +54,13 @@ namespace TextBasedGameEngine.Player
         public int Magic
         {
             get { return magic; }
+        }
+
+
+        public bool StatusEffect
+        {
+            get { return statusEffect; }
+            set { statusEffect = value; }
         }
     }
 }

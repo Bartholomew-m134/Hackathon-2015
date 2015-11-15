@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TextBasedGameEngine.Utilities;
 
-namespace TextBasedGameEngine.Player
+namespace TextBasedGameEngine.Interfaces
 {
     public interface IPlayer
     {
@@ -35,6 +35,12 @@ namespace TextBasedGameEngine.Player
         int Magic
         {
             get;
+        }
+
+        bool StatusEffect
+        {
+            get;
+            set;
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TextBasedGameEngine.Player;
 using TextBasedGameEngine.Utilities;
+using TextBasedGameEngine.Interfaces;
 
 namespace TextBasedGameEngine.Tiles
 {

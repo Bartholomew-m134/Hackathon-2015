@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TextBasedGameEngine.Player;
 
-namespace TextBasedGameEngine.Tiles
+namespace TextBasedGameEngine.Interfaces
 {
     public interface ITile
     {

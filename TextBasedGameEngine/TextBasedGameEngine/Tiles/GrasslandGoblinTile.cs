@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using TextBasedGameEngine.Enemy;
 using TextBasedGameEngine.Player;
 using TextBasedGameEngine.BattleHandling;
+using TextBasedGameEngine.Interfaces;
 
 namespace TextBasedGameEngine.Tiles
 {
