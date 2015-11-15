@@ -9,9 +9,13 @@ namespace TextBasedGameEngine.Tiles
 {
     public class SampleTile : ITile
     {
+        List<>
+
         public SampleTile()
         {
         }
+
+
 
         public void Attack(IPlayer player)
         {
