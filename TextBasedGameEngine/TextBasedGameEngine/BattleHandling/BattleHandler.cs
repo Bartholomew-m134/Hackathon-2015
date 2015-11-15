@@ -21,10 +21,21 @@ namespace TextBasedGameEngine.BattleHandling
 
         public void HandleBattle()
         {
+            int enemyHealth = enemy.Health;
             while (player.Health > 0 && enemy.Health > 0)
             {
+                Writer.WriteLine("Player: " + player.Health + "/" + player.MaxHealth + " Enemy: " + enemy.Health + "/" + enemyHealth);
+                Writer.WriteLine("Options: Attack Magic Heal");
                 HandlePlayerAction();
                 HandleEnemyAction();
+            }
+            if (player.Health == 0)
+            {
+                Writer.WriteLine("Player has been defeated.");
+            }
+            else
+            {
+                Writer.WriteLine("Enemy has been defeated.");
             }
         }
 
@@ -49,6 +60,7 @@ namespace TextBasedGameEngine.BattleHandling
 
         public void Magic(){
             enemy.Health -= player.Magic;
+            enemy.HitWithMagic = true;
         }
 
         public void Heal()

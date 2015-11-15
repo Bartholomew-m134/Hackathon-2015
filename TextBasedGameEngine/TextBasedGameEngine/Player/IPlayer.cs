@@ -15,6 +15,12 @@ namespace TextBasedGameEngine.Player
             set;
         }
 
+        int MaxHealth
+        {
+            get;
+            set;
+        }
+
         Location Position
         {
             get;

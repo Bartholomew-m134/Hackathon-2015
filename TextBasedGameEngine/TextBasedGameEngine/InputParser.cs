@@ -42,10 +42,7 @@ namespace TextBasedGameEngine
             }
             else if (input.Equals(InputCommandList.HELP, StringComparison.CurrentCultureIgnoreCase))
             {
-                List<string> list = InputCommandList.CommandList();
-
-                foreach (string command in list)
-                    Writer.WriteLine(command);
+                Instructions.PrintControls();
             }
             else
             {

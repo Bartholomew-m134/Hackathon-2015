@@ -46,6 +46,7 @@
     <Compile Include="BattleHandling\BattleParser.cs" />
     <Compile Include="Enemy\IEnemy.cs" />
     <Compile Include="Enemy\Goblin.cs" />
+    <Compile Include="Instructions.cs" />
     <Compile Include="Player\IPlayer.cs" />
     <Compile Include="InputParser.cs" />
     <Compile Include="Reader.cs" />

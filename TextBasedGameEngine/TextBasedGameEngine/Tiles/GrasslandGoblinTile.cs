@@ -19,8 +19,11 @@ namespace TextBasedGameEngine.Tiles
 
         public void Attack(IPlayer player)
         {
-            BattleHandler battle = new BattleHandler(player, enemy);
-            battle.HandleBattle();
+            if (enemy.Health > 0)
+            {
+                BattleHandler battle = new BattleHandler(player, enemy);
+                battle.HandleBattle();
+            }
         }
 
         public void Shop(IPlayer player)
