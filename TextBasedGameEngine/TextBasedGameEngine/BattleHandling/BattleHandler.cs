@@ -25,7 +25,7 @@ namespace TextBasedGameEngine.BattleHandling
             while (player.Health > 0 && enemy.Health > 0)
             {
                 Writer.WriteLine("Player: " + player.Health + "/" + player.MaxHealth + " Enemy: " + enemy.Health + "/" + enemyHealth);
-                Writer.WriteLine("Options: Attack Magic Heal");
+                Writer.WriteLine("Options: Melee Magic Heal");
                 HandlePlayerAction();
                 HandleEnemyAction();
             }

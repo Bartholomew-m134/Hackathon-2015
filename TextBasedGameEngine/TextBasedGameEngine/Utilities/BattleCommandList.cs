@@ -8,7 +8,7 @@ namespace TextBasedGameEngine.Utilities
 {
     public static class BattleCommandList
     {
-        public const string ATTACK = "Attack";
+        public const string Melee = "Melee";
         public const string MAGIC = "Magic";
         public const string HEAL = "Heal";
 
@@ -16,7 +16,7 @@ namespace TextBasedGameEngine.Utilities
         {
             List<string> list = new List<string>();
 
-            list.Add(ATTACK);
+            list.Add(Melee);
             list.Add(MAGIC);
             list.Add(HEAL);
 

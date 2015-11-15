@@ -12,7 +12,7 @@ namespace TextBasedGameEngine.BattleHandling
         public static bool ParseBattle(BattleHandler battle, string input)
         {
             bool validCommand = true;
-            if (input.Equals(BattleCommandList.ATTACK, StringComparison.CurrentCultureIgnoreCase))
+            if (input.Equals(BattleCommandList.Melee, StringComparison.CurrentCultureIgnoreCase))
             {
                 battle.Melee();
             }
