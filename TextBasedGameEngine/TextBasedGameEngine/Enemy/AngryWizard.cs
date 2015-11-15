@@ -9,7 +9,7 @@ namespace TextBasedGameEngine.Enemy
 {
     public class AngryWizard : IEnemy
     {
-        private const string NAME = "Centaur";
+        private const string NAME = "Angry Wizard";
         private int power = 30;
         private int health = 100;
         private bool isHitWithMagic = false;
@@ -39,6 +39,10 @@ namespace TextBasedGameEngine.Enemy
 
         public void HandleMagicBurn()
         {
+            if (isHitWithMagic)
+            {
+                health -= 5;
+            }
         }
 
         public void Attack(IPlayer player)

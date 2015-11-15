@@ -39,7 +39,10 @@ namespace TextBasedGameEngine.Enemy
 
         public void HandleMagicBurn()
         {
-            health -= 4;
+            if (isHitWithMagic)
+            {
+                health -= 2;
+            }
         }
 
         public void Attack(IPlayer player)
