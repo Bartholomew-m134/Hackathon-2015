@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TextBasedGameEngine.Interfaces;
+using TextBasedGameEngine.Tiles;
 
 namespace TextBasedGameEngine.BattleHandling
 {
@@ -33,6 +34,8 @@ namespace TextBasedGameEngine.BattleHandling
             if (player.Health <= 0)
             {
                 Writer.WriteLine("Player has been defeated.");
+                TileController.Load();
+                Instructions.PrintControls();
             }
             else
             {

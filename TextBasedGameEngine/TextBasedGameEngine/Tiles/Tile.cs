@@ -36,11 +36,14 @@ namespace TextBasedGameEngine.Tiles
 
         public void Shop(IPlayer player)
         {
-            if (storeItemList != null)
+            if (storeItemList != null && storeItemList.Count > 0)
             {
-                Writer.WriteLine("Test");
                 ShopHandler shop = new ShopHandler(player, storeItemList);
                 shop.ManageShop();
+            }
+            else
+            {
+                Writer.OutputNotAvailableCommand();
             }
         }
 
