@@ -63,8 +63,9 @@ namespace TextBasedGameEngine
                     ITile tile = null;
 
                     if (tileList[i][j].Equals("SampleTile"))
+                    {
                         tile = new SampleTile();
-
+                    }
                     if(tile != null)
                         tiles.Add(new KeyValuePair<int,int>(i+1,j+1), tile);
                 }
