@@ -10,8 +10,8 @@ namespace TextBasedGameEngine.Enemy
     public class Demon : IEnemy
     {
         private const string NAME = "Demon";
-        private int power = 90;
-        private int health = 500;
+        private int power = 70;
+        private int health = 250;
         private bool isHitWithMagic = false;
 
         public int AttackPower
