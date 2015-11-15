@@ -25,7 +25,7 @@ namespace TextBasedGameEngine.Tiles
 
         public void Look(IPlayer player)
         {
-            Writer.OutputNotAvailableCommand();
+            Writer.WriteLine("x: " + player.Position.X + " y: " + player.Position.Y);
         }
     }
 }
