@@ -67,7 +67,7 @@ namespace TextBasedGameEngine.Enemy
                 Writer.WriteLine("Player equips the Hellfire Garb.");
                 player.Armor = 80;
             }
-            player.Gold += 25;
+            player.Gold += 30;
             Writer.WriteLine("\n");
         }
     }

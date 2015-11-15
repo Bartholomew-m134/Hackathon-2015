@@ -65,7 +65,7 @@ namespace TextBasedGameEngine.Enemy
                 player.WeaponPower = power;
                 player.Magic = (power * 4) / 5;
             }
-            player.Gold += 10;
+            player.Gold += 15;
             Writer.WriteLine("\n");
         }
     }
