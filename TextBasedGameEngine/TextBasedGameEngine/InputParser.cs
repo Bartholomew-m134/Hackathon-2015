@@ -40,7 +40,7 @@ namespace TextBasedGameEngine
             {
                 TileController.MoveSouth();
             }
-            else if (input.Equals(InputCommandList.HELP, StringComparison.CurrentCultureIgnoreCase))
+            else if (input.Equals(InputCommandList.HELP, StringComparison.CurrentCultureIgnoreCase) || input.Equals("h"))
             {
                 Instructions.PrintControls();
             }

@@ -28,10 +28,11 @@ namespace TextBasedGameEngine.Shops
             while (!exitShop)
             {
                 Writer.WriteLine("Options: Look Purchase Next Exit");
+                Writer.WriteLine("         a    s        d    e");
+                LookAtItem();
                 string input = Console.ReadLine();
                 while(!ShopParser.ParseShop(this, input))
                     input = Console.ReadLine();
-
             }
         }
 

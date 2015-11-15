@@ -12,19 +12,19 @@ namespace TextBasedGameEngine.Shops
         public static bool ParseShop(ShopHandler shop, string input)
         {
             bool validCommand = true;
-            if (input.Equals(ShopCommandList.LOOK, StringComparison.CurrentCultureIgnoreCase))
+            if (input.Equals(ShopCommandList.LOOK, StringComparison.CurrentCultureIgnoreCase) || input.Equals("a"))
             {
                 shop.LookAtItem();
             }
-            else if (input.Equals(ShopCommandList.NEXT, StringComparison.CurrentCultureIgnoreCase))
+            else if (input.Equals(ShopCommandList.NEXT, StringComparison.CurrentCultureIgnoreCase) || input.Equals("d"))
             {
                 shop.NextItem();
             }
-            else if (input.Equals(ShopCommandList.PURCHASE, StringComparison.CurrentCultureIgnoreCase))
+            else if (input.Equals(ShopCommandList.PURCHASE, StringComparison.CurrentCultureIgnoreCase) || input.Equals("s"))
             {
                 shop.PurchaseItem();
             }
-            else if (input.Equals(ShopCommandList.EXIT, StringComparison.CurrentCultureIgnoreCase))
+            else if (input.Equals(ShopCommandList.EXIT, StringComparison.CurrentCultureIgnoreCase) || input.Equals("e"))
             {
                 shop.ExitShop();
             }

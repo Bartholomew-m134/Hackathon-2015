@@ -12,15 +12,15 @@ namespace TextBasedGameEngine.BattleHandling
         public static bool ParseBattle(BattleHandler battle, string input)
         {
             bool validCommand = true;
-            if (input.Equals(BattleCommandList.MELEE, StringComparison.CurrentCultureIgnoreCase))
+            if (input.Equals(BattleCommandList.MELEE, StringComparison.CurrentCultureIgnoreCase) || input.Equals("a"))
             {
                 battle.Melee();
             }
-            else if (input.Equals(BattleCommandList.MAGIC, StringComparison.CurrentCultureIgnoreCase))
+            else if (input.Equals(BattleCommandList.MAGIC, StringComparison.CurrentCultureIgnoreCase) || input.Equals("s"))
             {
                 battle.Magic();
             }
-            else if (input.Equals(BattleCommandList.HEAL, StringComparison.CurrentCultureIgnoreCase))
+            else if (input.Equals(BattleCommandList.HEAL, StringComparison.CurrentCultureIgnoreCase) || input.Equals("d"))
             {
                 battle.Heal();
             }

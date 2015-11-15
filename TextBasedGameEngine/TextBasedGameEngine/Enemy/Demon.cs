@@ -62,10 +62,10 @@ namespace TextBasedGameEngine.Enemy
                 player.WeaponPower = power;
                 player.Magic = (power * 4) / 5;
             }
-            if (40 > player.Armor)
+            if (80 > player.Armor)
             {
                 Writer.WriteLine("Player equips the Hellfire Garb.");
-                player.Armor = 40;
+                player.Armor = 80;
             }
             player.Gold += 25;
             Writer.WriteLine("\n");

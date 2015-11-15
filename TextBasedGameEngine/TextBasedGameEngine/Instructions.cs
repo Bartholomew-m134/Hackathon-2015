@@ -10,15 +10,15 @@ namespace TextBasedGameEngine
     {
         public static void PrintControls()
         {
-            Writer.WriteLine("Look - Observe the contents of a tile.");
-            Writer.WriteLine("Battle - If enemy is on tile, enter battle mode.");
+            Writer.WriteLine("Look/l - Observe the contents of a tile.");
+            Writer.WriteLine("Battle/b - If enemy is on tile, enter battle mode.");
             Writer.WriteLine("Shop - If shop is on tile, enter shop mode.");
             Writer.WriteLine("Status - Report the status of the player character.");
-            Writer.WriteLine("Move North - If possible, move north 1 tile location.");
-            Writer.WriteLine("Move South - If possible, move south 1 tile location.");
-            Writer.WriteLine("Move West - If possible, move west 1 tile location.");
-            Writer.WriteLine("Move East - If possible, move east 1 tile location.");
-            Writer.WriteLine("Help - Reprint this list of instructions.\n");
+            Writer.WriteLine("Move North/w - If possible, move north 1 tile location.");
+            Writer.WriteLine("Move South/s - If possible, move south 1 tile location.");
+            Writer.WriteLine("Move West/a - If possible, move west 1 tile location.");
+            Writer.WriteLine("Move East/d - If possible, move east 1 tile location.");
+            Writer.WriteLine("Help/h - Reprint this list of instructions.\n");
         }
     }
 }

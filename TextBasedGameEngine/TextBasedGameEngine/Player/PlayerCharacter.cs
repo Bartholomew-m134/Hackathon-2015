@@ -26,7 +26,7 @@ namespace TextBasedGameEngine.Player
         public PlayerCharacter()
         {
             playerLocation = new Location(1, 1);
-            inventory = new InventoryHandler();
+            inventory = new InventoryHandler(this);
             health = 100;
             maxHealth = 100;
             weaponPower = 10;

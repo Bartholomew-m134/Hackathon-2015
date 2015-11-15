@@ -11,10 +11,12 @@ namespace TextBasedGameEngine.Inventory
     {
         private List<IItem> itemList;
         private const int MAX_COUNT = 5;
+        private IPlayer player;
 
-        public InventoryHandler()
+        public InventoryHandler(IPlayer player)
         {
             itemList = new List<IItem>();
+            this.player = player;
         }
 
         public void HandleInventory()
@@ -58,6 +60,7 @@ namespace TextBasedGameEngine.Inventory
             if (index< itemList.Count)
             {
                 Writer.WriteLine("Used " + itemList[index].Name);
+                itemList[index].UseItem(player);
                 itemList.RemoveAt(index);
             }
             else
