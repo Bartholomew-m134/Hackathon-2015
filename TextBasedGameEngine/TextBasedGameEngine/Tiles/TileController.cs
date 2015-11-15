@@ -57,18 +57,18 @@ namespace TextBasedGameEngine.Tiles
 
         public static void MoveWest()
         {
-            if (tileList.ContainsKey(new KeyValuePair<int, int>(player.Position.X, player.Position.X - 1)))
+            if (tileList.ContainsKey(new KeyValuePair<int, int>(player.Position.X - 1, player.Position.Y)))
             {
-                tile = tileList[new KeyValuePair<int, int>(player.Position.X, player.Position.X - 1)];
+                tile = tileList[new KeyValuePair<int, int>(player.Position.X - 1, player.Position.Y)];
                 player.Position.X--;
             }
         }
 
         public static void MoveEast()
         {
-            if (tileList.ContainsKey(new KeyValuePair<int, int>(player.Position.X, player.Position.X + 1)))
+            if (tileList.ContainsKey(new KeyValuePair<int, int>(player.Position.X + 1, player.Position.Y)))
             {
-                tile = tileList[new KeyValuePair<int, int>(player.Position.X, player.Position.X + 1)];
+                tile = tileList[new KeyValuePair<int, int>(player.Position.X + 1, player.Position.Y)];
                 player.Position.X++;
             }
         }
