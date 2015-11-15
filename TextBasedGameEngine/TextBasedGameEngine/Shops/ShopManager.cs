@@ -7,22 +7,39 @@ using TextBasedGameEngine.Interfaces;
 
 namespace TextBasedGameEngine.Shops
 {
-    public class Shop
+    public class ShopManager
     {
         private List<IItem> storeItemList;
+        IPlayer player;
         int currentItem;
+        bool exitShop;
 
-        public Shop(List<IItem> list)
+        public ShopManager(IPlayer player, List<IItem> list)
         {
             storeItemList = list;
+            this.player = player;
             currentItem = 0;
+            exitShop = false;
+        }
+
+        public void ManageShop()
+        {
+
+            while (!exitShop)
+            {
+                string input = Console.ReadLine();
+                Writer.WriteLine("Options: Look Purchase Next Exit");
+                while(!ShopParser.ParseShop(this, input))
+                    input = Console.ReadLine();
+
+            }
         }
 
         public void LookAtItem(){
             Writer.WriteLine("Item: " + storeItemList[currentItem].Name + " Value: " + storeItemList[currentItem].Value);
         }
 
-        public void PurchaseItem(IPlayer player)
+        public void PurchaseItem()
         {
             if (player.Gold - storeItemList[currentItem].Value > 0)
             {
@@ -34,6 +51,11 @@ namespace TextBasedGameEngine.Shops
         public void NextItem()
         {
             currentItem = currentItem % storeItemList.Count;
+        }
+
+        public void ExitShop()
+        {
+            exitShop = true;
         }
     }
 }

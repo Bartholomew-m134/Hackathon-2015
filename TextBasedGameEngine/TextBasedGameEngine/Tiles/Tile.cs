@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TextBasedGameEngine.BattleHandling;
 using TextBasedGameEngine.Interfaces;
+using TextBasedGameEngine.Shops;
 
 namespace TextBasedGameEngine.Tiles
 {
@@ -36,7 +37,8 @@ namespace TextBasedGameEngine.Tiles
         {
             if (storeItemList.Count > 0)
             {
-                
+                ShopManager shop = new ShopManager(player, storeItemList);
+                shop.ManageShop();
             }
         }
 

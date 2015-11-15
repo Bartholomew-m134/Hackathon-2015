@@ -71,12 +71,10 @@ namespace TextBasedGameEngine.Interfaces
 
         void HandleStatusEffect();
 
-        public Inventory Inventory
+        Inventory Inventory
         {
             get ;
             set;
         }
-
-        public void UseItem();
     }
 }
