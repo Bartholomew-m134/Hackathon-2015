@@ -27,11 +27,13 @@ namespace TextBasedGameEngine.Tiles
         public static void Battle()
         {
             tile.Battle(player);
+            tile.Look(player);
         }
 
         public static void Shop()
         {
             tile.Shop(player);
+            tile.Look(player);
         }
 
         public static  void Look()
@@ -101,6 +103,7 @@ namespace TextBasedGameEngine.Tiles
         public static void Inventory()
         {
             player.Inventory.HandleInventory();
+            tile.Look(player);
         }
     }
 }
