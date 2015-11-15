@@ -15,6 +15,7 @@ namespace TextBasedGameEngine.Tiles
         {
         }
 
+        public void Battle(IPlayer player)
 
 
         public void Attack(IPlayer player)

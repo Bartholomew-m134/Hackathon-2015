@@ -53,7 +53,7 @@ namespace TextBasedGameEngine.BattleHandling
             enemy.HandleMagicBurn();
         }
 
-        public void Attack()
+        public void Melee()
         {
             enemy.Health -= player.Power;
         }

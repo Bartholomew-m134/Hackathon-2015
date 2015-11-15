@@ -11,7 +11,7 @@ namespace TextBasedGameEngine
         public static void PrintControls()
         {
             Writer.WriteLine("Look - Observe the contents of a tile.");
-            Writer.WriteLine("Attack - If enemy is on tile, enter battle mode.");
+            Writer.WriteLine("Battle - If enemy is on tile, enter battle mode.");
             Writer.WriteLine("Shop - If shop is on tile, enter shop mode.");
             Writer.WriteLine("Move North - If possible, move north 1 tile location.");
             Writer.WriteLine("Move South - If possible, move south 1 tile location.");
