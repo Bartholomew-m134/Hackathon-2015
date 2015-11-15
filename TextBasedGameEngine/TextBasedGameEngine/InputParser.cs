@@ -24,6 +24,22 @@ namespace TextBasedGameEngine
             {
                 TileController.Shop();
             }
+            else if (input.Equals(InputCommandList.MOVE_NORTH, StringComparison.CurrentCultureIgnoreCase))
+            {
+                TileController.MoveNorth();
+            }
+            else if (input.Equals(InputCommandList.MOVE_EAST, StringComparison.CurrentCultureIgnoreCase))
+            {
+                TileController.MoveEast();
+            }
+            else if (input.Equals(InputCommandList.MOVE_WEST, StringComparison.CurrentCultureIgnoreCase))
+            {
+                TileController.MoveWest();
+            }
+            else if (input.Equals(InputCommandList.MOVE_SOUTH, StringComparison.CurrentCultureIgnoreCase))
+            {
+                TileController.MoveSouth();
+            }
             else if (input.Equals(InputCommandList.HELP, StringComparison.CurrentCultureIgnoreCase))
             {
                 List<string> list = InputCommandList.CommandList();

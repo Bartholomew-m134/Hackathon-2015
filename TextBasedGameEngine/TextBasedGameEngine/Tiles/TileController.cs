@@ -10,7 +10,7 @@ namespace TextBasedGameEngine.Tiles
 {
     public static class TileController
     {
-        private static IPlayer player;
+        private static IPlayer storedPlayer;
         private static ITile tile;
         private static Dictionary<KeyValuePair<int,int>, ITile> tileList;
 
@@ -18,47 +18,63 @@ namespace TextBasedGameEngine.Tiles
         public static void Load()
         {
             tileList = TileLoader.Load("Tiles");
-            player = new PlayerCharacter();
+            storedPlayer = new PlayerCharacter();
             tile = tileList[new KeyValuePair<int,int>(1,1)];
         }
 
         public static void MoveNorth(IPlayer player)
         {
-            if (tileList.ContainsKey(player.Position.ConvertToPair()))
+            if (tileList.ContainsKey(new KeyValuePair<int, int>(player.Position.X, player.Position.Y - 1)))
+            {
                 tile = tileList[new KeyValuePair<int, int>(player.Position.X, player.Position.Y - 1)];
+                player.Position.Y--;
+                storedPlayer = player;
+            }
         }
 
         public static void MoveSouth(IPlayer player)
         {
-            if (tileList.ContainsKey(player.Position.ConvertToPair()))
-                tile = tileList[new KeyValuePair<int,int>(player.Position.X, player.Position.Y + 1)];
+            if (tileList.ContainsKey(new KeyValuePair<int, int>(player.Position.X, player.Position.Y + 1)))
+            {
+                tile = tileList[new KeyValuePair<int, int>(player.Position.X, player.Position.Y + 1)];
+                player.Position.Y++;
+                storedPlayer = player;
+            }
         }
 
         public static void MoveWest(IPlayer player)
         {
-             if (tileList.ContainsKey(player.Position.ConvertToPair()))
+            if (tileList.ContainsKey(new KeyValuePair<int, int>(player.Position.X, player.Position.X - 1)))
+            {
                 tile = tileList[new KeyValuePair<int, int>(player.Position.X, player.Position.X - 1)];
+                player.Position.X--;
+                storedPlayer = player;
+            }
         }
 
         public static void MoveEast(IPlayer player)
         {
-            if (tileList.ContainsKey(player.Position.ConvertToPair()))
+            if (tileList.ContainsKey(new KeyValuePair<int, int>(player.Position.X, player.Position.X + 1)))
+            {
                 tile = tileList[new KeyValuePair<int, int>(player.Position.X, player.Position.X + 1)];
+                player.Position.X += 1;
+                storedPlayer = player;
+            }
         }
 
         public static void Attack()
         {
-            tile.Attack(player);
+            tile.Attack(storedPlayer);
         }
 
         public static void Shop()
         {
-            tile.Shop(player);
+            tile.Shop(storedPlayer);
         }
 
         public static  void Look()
         {
-            tile.Look(player);
+            tile.Look(storedPlayer);
         }
 
         public static void MoveNorth()
