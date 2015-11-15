@@ -48,5 +48,10 @@ namespace TextBasedGameEngine.Enemy
                 player.Health -= power;
             Writer.WriteLine("Enemy damages player for " + damage);
         }
+
+        public void Loot(IPlayer player)
+        {
+            Writer.WriteLine("You killed a chicken.... I hope you are proud of yourself.");
+        }
     }
 }

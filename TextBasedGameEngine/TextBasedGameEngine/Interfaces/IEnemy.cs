@@ -33,5 +33,7 @@ namespace TextBasedGameEngine.Interfaces
         }
 
         void HandleMagicBurn();
+
+        void Loot(IPlayer player);
     }
 }

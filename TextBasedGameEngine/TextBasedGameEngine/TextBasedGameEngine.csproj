@@ -45,6 +45,7 @@
     <Compile Include="BattleHandling\BattleHandler.cs" />
     <Compile Include="BattleHandling\BattleParser.cs" />
     <Compile Include="Enemy\Chicken.cs" />
+    <Compile Include="Enemy\GiantCrab.cs" />
     <Compile Include="Enemy\Wyvern.cs" />
     <Compile Include="Interfaces\IComponent.cs" />
     <Compile Include="Components\MoveSouthCommand.cs" />

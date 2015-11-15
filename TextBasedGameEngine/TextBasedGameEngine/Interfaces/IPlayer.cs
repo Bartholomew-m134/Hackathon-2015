@@ -36,6 +36,7 @@ namespace TextBasedGameEngine.Interfaces
         int Magic
         {
             get;
+            set;
         }
 
         int Heal

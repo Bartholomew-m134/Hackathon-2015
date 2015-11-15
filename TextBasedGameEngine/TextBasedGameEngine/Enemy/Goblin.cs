@@ -52,5 +52,15 @@ namespace TextBasedGameEngine.Enemy
                 player.Health -= damage;
             Writer.WriteLine("Enemy damages player for " + damage);
         }
+
+        public void Loot(IPlayer player)
+        {
+            Writer.WriteLine("Player loots a Goblin Mail with a defense of 4.");
+            if (4 > player.Armor)
+            {
+                Writer.WriteLine("Player equips the Goblin Mail.");
+                player.Armor = 4;
+            }
+        }
     }
 }

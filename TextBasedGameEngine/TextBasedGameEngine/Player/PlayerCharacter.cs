@@ -25,9 +25,9 @@ namespace TextBasedGameEngine.Player
             playerLocation = new Location(1, 1);
             health = 100;
             maxHealth = 100;
-            weaponPower = 20;
+            weaponPower = 10;
             armor = 0;
-            magic = 16;
+            magic = (weaponPower*4)/5;
             heal = 20;
             hasStatus = false;
             statusModifier = 0;
@@ -68,6 +68,7 @@ namespace TextBasedGameEngine.Player
         public int Magic
         {
             get { return magic; }
+            set { magic = value; }
         }
 
 
