@@ -14,7 +14,7 @@ namespace TextBasedGameEngine.BattleHandling
             bool validCommand = true;
             if (input.Equals(BattleCommandList.ATTACK, StringComparison.CurrentCultureIgnoreCase))
             {
-                battle.Attack();
+                battle.Melee();
             }
             else if (input.Equals(BattleCommandList.MAGIC, StringComparison.CurrentCultureIgnoreCase))
             {

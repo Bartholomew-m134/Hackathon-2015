@@ -17,7 +17,7 @@ namespace TextBasedGameEngine.Tiles
             enemy = new Goblin();
         }
 
-        public void Attack(IPlayer player)
+        public void Battle(IPlayer player)
         {
             if (enemy.Health > 0)
             {

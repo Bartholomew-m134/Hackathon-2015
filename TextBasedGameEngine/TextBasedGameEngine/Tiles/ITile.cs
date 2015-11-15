@@ -9,7 +9,7 @@ namespace TextBasedGameEngine.Tiles
 {
     public interface ITile
     {
-        void Attack(IPlayer player);
+        void Battle(IPlayer player);
         void Shop(IPlayer player);
         void Look(IPlayer player);
     }

@@ -8,7 +8,7 @@ namespace TextBasedGameEngine.Utilities
 {
     public static class InputCommandList
     {
-        public const string ATTACK = "Attack";
+        public const string BATTLE = "Battle";
         public const string LOOK = "Look";
         public const string SHOP = "Shop";
         public const string HELP = "Help";
@@ -22,7 +22,7 @@ namespace TextBasedGameEngine.Utilities
         {
             List<string> list = new List<string>();
 
-            list.Add(ATTACK);
+            list.Add(BATTLE);
             list.Add(LOOK);
             list.Add(SHOP);
 

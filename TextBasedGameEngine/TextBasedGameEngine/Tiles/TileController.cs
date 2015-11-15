@@ -22,9 +22,9 @@ namespace TextBasedGameEngine.Tiles
             tile = tileList[new KeyValuePair<int,int>(1,1)];
         }
 
-        public static void Attack()
+        public static void Battle()
         {
-            tile.Attack(player);
+            tile.Battle(player);
         }
 
         public static void Shop()

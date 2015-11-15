@@ -12,9 +12,9 @@ namespace TextBasedGameEngine
     {
         public static void Parse(string input) 
         {
-            if (input.Equals(InputCommandList.ATTACK, StringComparison.CurrentCultureIgnoreCase))
+            if (input.Equals(InputCommandList.BATTLE, StringComparison.CurrentCultureIgnoreCase))
             {
-                TileController.Attack();
+                TileController.Battle();
             }
             else if (input.Equals(InputCommandList.LOOK, StringComparison.CurrentCultureIgnoreCase))
             {

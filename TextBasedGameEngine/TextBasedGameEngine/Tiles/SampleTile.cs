@@ -13,7 +13,7 @@ namespace TextBasedGameEngine.Tiles
         {
         }
 
-        public void Attack(IPlayer player)
+        public void Battle(IPlayer player)
         {
             Writer.OutputNotAvailableCommand();
         }
