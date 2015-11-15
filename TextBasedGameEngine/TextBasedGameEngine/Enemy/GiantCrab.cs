@@ -9,7 +9,7 @@ namespace TextBasedGameEngine.Enemy
 {
     public class GiantCrab : IEnemy
     {
-        private const string NAME = "Wyvern";
+        private const string NAME = "Giant Crab";
         private int power = 15;
         private int health = 30;
         private bool isHitWithMagic = false;
@@ -51,8 +51,8 @@ namespace TextBasedGameEngine.Enemy
             if (damage > 0)
                 player.Health -= damage;
             player.HasStatusEffect = true;
-            player.StatusEffectModifier = -5;
-            Writer.WriteLine("Enemy damages player for " + damage + ", and applies a status for -5");
+            player.StatusEffectModifier = -1;
+            Writer.WriteLine("Enemy damages player for " + damage + ", and applies a status for -1");
         }
 
 
@@ -65,6 +65,7 @@ namespace TextBasedGameEngine.Enemy
                 player.WeaponPower = power;
                 player.Magic = (power * 4) / 5;
             }
+            Writer.WriteLine("\n");
         }
     }
 }

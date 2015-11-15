@@ -29,7 +29,7 @@ namespace TextBasedGameEngine.BattleHandling
                 HandleEnemyAction();
                 HandleStatusEffect();
             }
-            if (player.Health == 0)
+            if (player.Health <= 0)
             {
                 Writer.WriteLine("Player has been defeated.");
             }

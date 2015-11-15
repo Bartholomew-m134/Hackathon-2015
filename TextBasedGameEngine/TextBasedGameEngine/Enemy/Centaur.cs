@@ -7,11 +7,11 @@ using TextBasedGameEngine.Interfaces;
 
 namespace TextBasedGameEngine.Enemy
 {
-    public class Chicken : IEnemy
+    public class Centaur : IEnemy
     {
-        private const string NAME = "Chicken";
-        private int power = 2;
-        private int health = 6;
+        private const string NAME = "Centaur";
+        private int power = 35;
+        private int health = 80;
         private bool isHitWithMagic = false;
 
         public int AttackPower
@@ -44,14 +44,20 @@ namespace TextBasedGameEngine.Enemy
         public void Attack(IPlayer player)
         {
             int damage = power - player.Armor;
-            if(damage > 0)
-                player.Health -= power;
+            if (damage > 0)
+                player.Health -= damage;
             Writer.WriteLine("Enemy damages player for " + damage);
         }
 
+
         public void Loot(IPlayer player)
         {
-            Writer.WriteLine("You killed a chicken.... I hope you are proud of yourself.");
+            Writer.WriteLine("Player loots a Centaur Mail with a defense of 15.");
+            if (15 > player.Armor)
+            {
+                Writer.WriteLine("Player equips the Scale Mail.");
+                player.Armor = 15;
+            }
             Writer.WriteLine("\n");
         }
     }

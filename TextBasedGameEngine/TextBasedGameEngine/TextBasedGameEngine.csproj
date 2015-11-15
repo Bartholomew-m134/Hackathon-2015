@@ -44,8 +44,11 @@
   <ItemGroup>
     <Compile Include="BattleHandling\BattleHandler.cs" />
     <Compile Include="BattleHandling\BattleParser.cs" />
+    <Compile Include="Enemy\ArmoredLizard.cs" />
+    <Compile Include="Enemy\Centaur.cs" />
     <Compile Include="Enemy\Chicken.cs" />
     <Compile Include="Enemy\GiantCrab.cs" />
+    <Compile Include="Enemy\Troll.cs" />
     <Compile Include="Enemy\Wyvern.cs" />
     <Compile Include="Interfaces\IComponent.cs" />
     <Compile Include="Components\MoveSouthCommand.cs" />
