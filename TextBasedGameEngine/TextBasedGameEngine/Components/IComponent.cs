@@ -8,6 +8,6 @@ namespace TextBasedGameEngine.Components
 {
     public interface IComponent
     {
-        public void Execute();
+        void Execute();
     }
 }

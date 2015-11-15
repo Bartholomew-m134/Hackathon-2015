@@ -9,16 +9,11 @@ namespace TextBasedGameEngine.Tiles
 {
     public class SampleTile : ITile
     {
-        List<>
-
         public SampleTile()
         {
         }
 
         public void Battle(IPlayer player)
-
-
-        public void Attack(IPlayer player)
         {
             Writer.OutputNotAvailableCommand();
         }
