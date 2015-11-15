@@ -12,7 +12,6 @@ namespace TextBasedGameEngine.Enemy
         private int power = 2;
         private int health = 6;
         private bool isHitWithMagic = false;
-        private bool isHostile = false;
 
         public int AttackPower
         {
@@ -25,12 +24,6 @@ namespace TextBasedGameEngine.Enemy
             set { health = value; }
         }
 
-
-        public bool Hostile
-        {
-            get { return isHostile; }
-        }
-
         public bool HitWithMagic
         {
             get { return isHitWithMagic; }
@@ -40,15 +33,14 @@ namespace TextBasedGameEngine.Enemy
 
         public void HandleMagicBurn()
         {
-            if (isHitWithMagic)
-            {
-                health -= 2;
-            }
         }
 
         public void Attack(IPlayer player)
         {
-            player.Health -= power;
+            int damage = power - player.Armor;
+            if(damage > 0)
+                player.Health -= power;
+            Writer.WriteLine("Enemy damages player for " + damage);
         }
     }
 }

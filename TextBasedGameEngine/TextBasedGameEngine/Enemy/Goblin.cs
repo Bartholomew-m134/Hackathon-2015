@@ -12,7 +12,6 @@ namespace TextBasedGameEngine.Enemy
         private int power = 10;
         private int health = 40;
         private bool isHitWithMagic = false;
-        private bool isHostile = true;
 
         public int AttackPower
         {
@@ -23,12 +22,6 @@ namespace TextBasedGameEngine.Enemy
         {
             get { return health; }
             set { health = value; }
-        }
-
-
-        public bool Hostile
-        {
-            get { return isHostile; }
         }
 
         public bool HitWithMagic
@@ -48,7 +41,10 @@ namespace TextBasedGameEngine.Enemy
 
         public void Attack(IPlayer player)
         {
-            player.Health -= power;
+            int damage = power - player.Armor;
+            if (damage > 0)
+                player.Health -= damage;
+            Writer.WriteLine("Enemy damages player for " + damage);
         }
     }
 }

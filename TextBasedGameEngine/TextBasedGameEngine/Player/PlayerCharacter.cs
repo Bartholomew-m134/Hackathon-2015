@@ -13,10 +13,11 @@ namespace TextBasedGameEngine.Player
         private Location playerLocation;
         private int health;
         private int maxHealth;
-        private int power;
+        private int weaponPower;
+        private int armor;
         private int magic;
         private int heal;
-        private bool statusEffect;
+        private bool hasStatus;
         private int statusModifier;
 
         public PlayerCharacter()
@@ -24,10 +25,11 @@ namespace TextBasedGameEngine.Player
             playerLocation = new Location(1, 1);
             health = 100;
             maxHealth = 100;
-            power = 20;
+            weaponPower = 20;
+            armor = 0;
             magic = 16;
             heal = 20;
-            statusEffect = false;
+            hasStatus = false;
             statusModifier = 0;
         }
 
@@ -50,9 +52,16 @@ namespace TextBasedGameEngine.Player
         }
 
 
-        public int Power
+        public int WeaponPower
         {
-            get { return power; }
+            get { return weaponPower; }
+            set { weaponPower = value; }
+        }
+
+        public int Armor
+        {
+            get { return armor; }
+            set { armor = value; }
         }
 
 
@@ -62,14 +71,14 @@ namespace TextBasedGameEngine.Player
         }
 
 
-        public bool StatusEffect
+        public bool HasStatusEffect
         {
-            get { return statusEffect; }
-            set { statusEffect = value; }
+            get { return hasStatus; }
+            set { hasStatus = value; }
         }
 
 
-        public int StatusModifier
+        public int StatusEffectModifier
         {
             set { statusModifier = value; }
         }

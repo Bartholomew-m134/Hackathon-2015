@@ -16,6 +16,7 @@ namespace TextBasedGameEngine.Utilities
         public const string MOVE_EAST = "Move East";
         public const string MOVE_WEST = "Move West";
         public const string MOVE_SOUTH = "Move South";
+        public const string STATUS = "Status";
 
 
         public static List<string> CommandList()
@@ -25,6 +26,7 @@ namespace TextBasedGameEngine.Utilities
             list.Add(BATTLE);
             list.Add(LOOK);
             list.Add(SHOP);
+            list.Add(STATUS);
 
             list.Add(MOVE_NORTH);
             list.Add(MOVE_SOUTH);

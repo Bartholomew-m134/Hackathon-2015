@@ -21,11 +21,6 @@ namespace TextBasedGameEngine.Interfaces
             set;
         }
 
-        bool Hostile
-        {
-            get;
-        }
-
         bool HitWithMagic
         {
             get;
