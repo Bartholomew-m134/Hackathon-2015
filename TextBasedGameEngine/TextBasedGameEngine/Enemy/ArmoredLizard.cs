@@ -61,6 +61,7 @@ namespace TextBasedGameEngine.Enemy
                 Writer.WriteLine("Player equips the Scale Mail.");
                 player.Armor = 10;
             }
+            player.Gold += 4;
             Writer.WriteLine("\n");
         }
     }

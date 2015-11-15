@@ -60,6 +60,7 @@ namespace TextBasedGameEngine.Enemy
                 Writer.WriteLine("Player equips the Magical Mail.");
                 player.Armor = 25;
             }
+            player.Gold += 5;
             Writer.WriteLine("\n");
         }
     }

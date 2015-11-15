@@ -71,6 +71,7 @@ namespace TextBasedGameEngine.Enemy
                 Writer.WriteLine("Player equips the Dragon Plate Mail.");
                 player.Armor = 40;
             }
+            player.Gold += 15;
             Writer.WriteLine("\n");
         }
     }

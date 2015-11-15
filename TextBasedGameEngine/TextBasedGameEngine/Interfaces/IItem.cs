@@ -9,5 +9,7 @@ namespace TextBasedGameEngine.Interfaces
     public interface IItem
     {
         string Name { get; }
+        void UseItem(IPlayer player);
+        int Value { get; }
     }
 }

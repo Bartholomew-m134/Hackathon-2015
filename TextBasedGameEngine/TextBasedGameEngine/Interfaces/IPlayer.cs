@@ -21,6 +21,12 @@ namespace TextBasedGameEngine.Interfaces
             set;
         }
 
+        int Gold
+        {
+            get;
+            set;
+        }
+
         Location Position
         {
             get;

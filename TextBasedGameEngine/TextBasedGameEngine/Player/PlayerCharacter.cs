@@ -19,6 +19,7 @@ namespace TextBasedGameEngine.Player
         private int heal;
         private bool hasStatus;
         private int statusModifier;
+        int gold;
 
         public PlayerCharacter()
         {
@@ -31,6 +32,7 @@ namespace TextBasedGameEngine.Player
             heal = 20;
             hasStatus = false;
             statusModifier = 0;
+            gold = 0;
         }
 
         public int Health
@@ -96,6 +98,13 @@ namespace TextBasedGameEngine.Player
         {
             get { return heal; }
             set { heal = value; }
+        }
+
+
+        public int Gold
+        {
+            get { return gold; }
+            set { gold = value}
         }
     }
 }
