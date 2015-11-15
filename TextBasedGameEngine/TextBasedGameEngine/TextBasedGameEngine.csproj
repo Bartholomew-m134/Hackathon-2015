@@ -63,6 +63,7 @@
     <Compile Include="InputParser.cs" />
     <Compile Include="Items\HealingBooster.cs" />
     <Compile Include="Items\HealthPotion.cs" />
+    <Compile Include="Inventory.cs" />
     <Compile Include="Reader.cs" />
     <Compile Include="Player\PlayerCharacter.cs" />
     <Compile Include="Program.cs" />

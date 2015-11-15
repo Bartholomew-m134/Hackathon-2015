@@ -93,6 +93,7 @@ namespace TextBasedGameEngine.Tiles
             Writer.WriteLine("Armor: " + player.Armor);
             Writer.WriteLine("Weapon Power: " + player.WeaponPower);
             Writer.WriteLine("Magic Power: " + player.Magic + "\n");
+            player.Inventory.PrintInventory();
         }
     }
 }

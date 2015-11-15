@@ -70,5 +70,11 @@ namespace TextBasedGameEngine.Interfaces
         }
 
         void HandleStatusEffect();
+
+        public Inventory Inventory
+        {
+            get ;
+            set;
+        }
     }
 }
