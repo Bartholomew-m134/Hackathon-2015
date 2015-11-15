@@ -8,13 +8,17 @@ using TextBasedGameEngine.Interfaces;
 
 namespace TextBasedGameEngine.Tiles
 {
-    public class GrasslandTile : ITile
+    public class Tile : ITile
     {
-        List<IEnemy> enemyList;
+        private List<IEnemy> enemyList;
+        private List<IItem> storeItemList;
+        private string lookText;
 
-        public GrasslandTile(List<IEnemy> enemies)
+
+        public Tile(string lookText, List<IEnemy> enemies, List<IItem> storeItems)
         {
             enemyList = enemies;
+            this.lookText = lookText;
         }
 
         public void Battle(IPlayer player)
@@ -28,13 +32,14 @@ namespace TextBasedGameEngine.Tiles
 
         public void Shop(IPlayer player)
         {
-            
+            if (storeItemList.Count > 0)
+                Writer.WriteLine("Store");
         }
 
         public void Look(IPlayer player)
         {
             Writer.WriteLine("x: " + player.Position.X + " y: " + player.Position.Y);
-            Writer.WriteLine("You are in a Grassland.");
+            Writer.WriteLine(lookText);
 
             foreach (IEnemy enemy in enemyList)
             {

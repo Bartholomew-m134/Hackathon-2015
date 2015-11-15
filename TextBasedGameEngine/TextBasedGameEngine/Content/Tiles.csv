@@ -1,3 +1,11 @@
-g-GCW,SampleTile,GrasslandGoblinTile,
-GrasslandGoblinTile,SampleTile,
-,,
+b,b,b-C,b,b,b,b,b
+b-C,g-C,g,g,g,g,g,c
+b-CG,t,h-G,g,g,h,g,c
+b,h-G,g,h,g,g,g,c
+b,g,h,c,h,g,g,c
+b,h,c,v-W,c,h,g,c
+b,g,h,c,h,g,g,c
+b,g,g,h,g,g,g,c
+b,h,g,g,g,g,g,c
+b,g,g,g,g,g,g,c
+c,c,c,c,c,c,c,c

@@ -8,6 +8,7 @@ using TextBasedGameEngine.Enemy;
 using TextBasedGameEngine.Interfaces;
 using TextBasedGameEngine.Tiles;
 using TextBasedGameEngine.Utilities;
+using TextBasedGameEngine.Utilities.Constants;
 
 namespace TextBasedGameEngine
 {
@@ -62,21 +63,40 @@ namespace TextBasedGameEngine
                 for (int j = 0; j < tileList[i].Length - 1; j++)
                 {
                     string[] tileInfo = tileList[i][j].Split('-');
-                    List<IEnemy> enemies = CreateNewEnemies(tileInfo[tileInfo.Length - 1]);
+                    List<IEnemy> enemies = new List<IEnemy>();
+                    List<IItem> storeItems = new List<IItem>();
                     ITile tile = null;
 
-                    if (tileInfo[0].Equals("SampleTile"))
+                    if(tileInfo.Length > 1)
+                        enemies = CreateNewEnemies(tileInfo[1]);
+                    if (tileInfo.Length > 2)
+                        storeItems = CreateNewStoreItems(tileInfo[2]);
+
+                    if (tileInfo[0].Equals("b"))
                     {
-                        tile = new SampleTile();
+                        tile = new Tile(TileLookConstants.BEACH, enemies, storeItems);
                     }
-                    else if (tileInfo[0].Equals("GrasslandGoblinTile"))
+                    else if (tileInfo[0].Equals("c"))
                     {
-                        tile = new GrasslandGoblinTile();
+                        tile = new Tile(TileLookConstants.CLIFF, enemies, storeItems);
                     }
                     else if (tileInfo[0].Equals("g"))
                     {
-                        tile = new GrasslandTile(enemies);
+                        tile = new Tile(TileLookConstants.GRASSLAND, enemies, storeItems);
                     }
+                    else if (tileInfo[0].Equals("h"))
+                    {
+                        tile = new Tile(TileLookConstants.HILLS, enemies, storeItems);
+                    }
+                    else if (tileInfo[0].Equals("v"))
+                    {
+                        tile = new Tile(TileLookConstants.VOLCANO, enemies, storeItems);
+                    }
+                    else if (tileInfo[0].Equals("t"))
+                    {
+                        tile = new Tile(TileLookConstants.TOWN, enemies, storeItems);
+                    }
+
 
                     if(tile != null)
                         tiles.Add(new KeyValuePair<int,int>(j+1,i+1), tile);
@@ -107,6 +127,29 @@ namespace TextBasedGameEngine
             }
 
             return enemyList;
+        }
+
+        private static List<IItem> CreateNewStoreItems(string itemsString)
+        {
+            List<IItem> storeItemList = new List<IItem>();
+
+            for (int i = 0; i < itemsString.Length; i++)
+            {
+                if (itemsString[i].Equals('G'))
+                {
+                    //storeItemList.Add(new Goblin());
+                }
+                else if (itemsString[i].Equals('C'))
+                {
+                   //storeItemList.Add(new Chicken());
+                }
+                else if (itemsString[i].Equals('W'))
+                {
+                    //storeItemList.Add(new Wyvern());
+                }
+            }
+
+            return storeItemList;
         }
     }
 }
