@@ -11,6 +11,11 @@ namespace TextBasedGameEngine
         private const string INVALID_COMMAND_TEXT = "Invalid Command";
         private const string NOT_ABAILABLE_COMMAND_TEXT = "Not possible here";
 
+        public static void Write(string text)
+        {
+            Console.Write(text);
+        }
+
         public static void WriteLine(string text)
         {
             Console.WriteLine(text);

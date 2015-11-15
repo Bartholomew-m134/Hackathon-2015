@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TextBasedGameEngine.Enemy;
 using TextBasedGameEngine.Interfaces;
 using TextBasedGameEngine.Tiles;
 using TextBasedGameEngine.Utilities;
@@ -60,23 +61,55 @@ namespace TextBasedGameEngine
             {
                 for (int j = 0; j < tileList[i].Length - 1; j++)
                 {
+                    string[] tileInfo = tileList[i][j].Split('-');
+                    List<IEnemy> enemies = CreateNewEnemies(tileInfo[tileInfo.Length - 1]);
                     ITile tile = null;
 
-                    if (tileList[i][j].Equals("SampleTile"))
+                    if (tileInfo[0].Equals("SampleTile"))
                     {
                         tile = new SampleTile();
                     }
-                    else if (tileList[i][j].Equals("GrasslandGoblinTile"))
+                    else if (tileInfo[0].Equals("GrasslandGoblinTile"))
                     {
                         tile = new GrasslandGoblinTile();
                     }
+                    else if (tileInfo[0].Equals("g"))
+                    {
+                        tile = new GrasslandTile(enemies);
+                        Console.WriteLine("Grass");
+                    }
+
                     if(tile != null)
                         tiles.Add(new KeyValuePair<int,int>(j+1,i+1), tile);
-
                 }
             }
 
             return tiles;
+        }
+
+        private static List<IEnemy> CreateNewEnemies(string enemyString)
+        {
+            List<IEnemy> enemyList = new List<IEnemy>();
+            Console.WriteLine(enemyString);
+
+            for (int i = 0; i < enemyString.Length; i++)
+            {
+                if(enemyString[i].Equals('G'))
+                {
+                    enemyList.Add(new Goblin());
+                    Console.WriteLine(enemyString);
+                }
+                else if (enemyString[i].Equals('C'))
+                {
+                    enemyList.Add(new Chicken());
+                }
+                else if (enemyString[i].Equals('W'))
+                {
+                    enemyList.Add(new Wyvern());
+                }
+            }
+
+            return enemyList;
         }
     }
 }

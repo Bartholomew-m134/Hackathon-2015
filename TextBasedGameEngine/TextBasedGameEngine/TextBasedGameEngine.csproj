@@ -60,6 +60,7 @@
     <Compile Include="TileLoader.cs" />
     <Compile Include="Tiles\GrasslandGoblinTile.cs" />
     <Compile Include="Interfaces\ITile.cs" />
+    <Compile Include="Tiles\GrasslandTile.cs" />
     <Compile Include="Tiles\SampleTile.cs" />
     <Compile Include="Tiles\TileController.cs" />
     <Compile Include="Utilities\BattleCommandList.cs" />
