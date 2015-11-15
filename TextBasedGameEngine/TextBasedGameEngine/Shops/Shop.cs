@@ -27,15 +27,13 @@ namespace TextBasedGameEngine.Shops
             if (player.Gold - storeItemList[currentItem].Value > 0)
             {
                 player.Gold -= storeItemList[currentItem].Value;
-
+                player.Inventory.AddItem(storeItemList[currentItem]);
             }
         }
 
         public void NextItem()
         {
-            currentItem++;
-            if (currentItem >= storeItemList.Count)
-                currentItem = 0;
+            currentItem = currentItem % storeItemList.Count;
         }
     }
 }

@@ -76,5 +76,7 @@ namespace TextBasedGameEngine.Interfaces
             get ;
             set;
         }
+
+        public void UseItem();
     }
 }

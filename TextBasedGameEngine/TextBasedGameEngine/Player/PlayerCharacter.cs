@@ -20,7 +20,7 @@ namespace TextBasedGameEngine.Player
         private int heal;
         private bool hasStatus;
         private int statusModifier;
-        int gold;
+        private int gold;
 
         public PlayerCharacter()
         {
@@ -106,7 +106,7 @@ namespace TextBasedGameEngine.Player
         public int Gold
         {
             get { return gold; }
-            set { gold = value}
+            set { gold = value; }
         }
 
         public Inventory Inventory

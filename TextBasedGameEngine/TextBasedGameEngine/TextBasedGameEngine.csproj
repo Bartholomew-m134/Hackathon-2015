@@ -54,7 +54,6 @@
     <Compile Include="Enemy\Troll.cs" />
     <Compile Include="Enemy\Wyvern.cs" />
     <Compile Include="Interfaces\IComponent.cs" />
-    <Compile Include="Components\MoveSouthCommand.cs" />
     <Compile Include="Interfaces\IEnemy.cs" />
     <Compile Include="Enemy\Goblin.cs" />
     <Compile Include="Instructions.cs" />

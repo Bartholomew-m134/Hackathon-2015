@@ -12,7 +12,7 @@ namespace TextBasedGameEngine
         private List<IItem> itemList;
         private const int MAX_COUNT = 5;
 
-        public Inventory() 
+        public Inventory()
         {
             itemList = new List<IItem>();
         }
@@ -46,9 +46,10 @@ namespace TextBasedGameEngine
         {
             Writer.WriteLine("Inventory");
 
-            for(int i = 0; i < itemList.Count; i++)
+            for (int i = 0; i < itemList.Count; i++)
             {
                 Writer.WriteLine(i + ": " + itemList[i].Name);
             }
+        }
     }
 }

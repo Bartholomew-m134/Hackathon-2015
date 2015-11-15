@@ -35,7 +35,9 @@ namespace TextBasedGameEngine.Tiles
         public void Shop(IPlayer player)
         {
             if (storeItemList.Count > 0)
-                Writer.WriteLine("Store");
+            {
+                
+            }
         }
 
         public void Look(IPlayer player)
