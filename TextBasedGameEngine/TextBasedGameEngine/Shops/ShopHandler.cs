@@ -7,14 +7,14 @@ using TextBasedGameEngine.Interfaces;
 
 namespace TextBasedGameEngine.Shops
 {
-    public class ShopManager
+    public class ShopHandler
     {
         private List<IItem> storeItemList;
         IPlayer player;
         int currentItem;
         bool exitShop;
 
-        public ShopManager(IPlayer player, List<IItem> list)
+        public ShopHandler(IPlayer player, List<IItem> list)
         {
             storeItemList = list;
             this.player = player;
@@ -27,8 +27,8 @@ namespace TextBasedGameEngine.Shops
 
             while (!exitShop)
             {
-                string input = Console.ReadLine();
                 Writer.WriteLine("Options: Look Purchase Next Exit");
+                string input = Console.ReadLine();
                 while(!ShopParser.ParseShop(this, input))
                     input = Console.ReadLine();
 
@@ -50,7 +50,9 @@ namespace TextBasedGameEngine.Shops
 
         public void NextItem()
         {
-            currentItem = currentItem % storeItemList.Count;
+            currentItem++;
+            if (currentItem >= storeItemList.Count)
+                currentItem = 0;
         }
 
         public void ExitShop()

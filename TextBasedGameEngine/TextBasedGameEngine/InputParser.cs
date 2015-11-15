@@ -12,11 +12,11 @@ namespace TextBasedGameEngine
     {
         public static void Parse(string input) 
         {
-            if (input.Equals(InputCommandList.BATTLE, StringComparison.CurrentCultureIgnoreCase))
+            if (input.Equals(InputCommandList.BATTLE, StringComparison.CurrentCultureIgnoreCase) || input.Equals("b"))
             {
                 TileController.Battle();
             }
-            else if (input.Equals(InputCommandList.LOOK, StringComparison.CurrentCultureIgnoreCase))
+            else if (input.Equals(InputCommandList.LOOK, StringComparison.CurrentCultureIgnoreCase) || input.Equals("l"))
             {
                 TileController.Look();
             }
@@ -24,19 +24,19 @@ namespace TextBasedGameEngine
             {
                 TileController.Shop();
             }
-            else if (input.Equals(InputCommandList.MOVE_NORTH, StringComparison.CurrentCultureIgnoreCase))
+            else if (input.Equals(InputCommandList.MOVE_NORTH, StringComparison.CurrentCultureIgnoreCase) || input.Equals("w"))
             {
                 TileController.MoveNorth();
             }
-            else if (input.Equals(InputCommandList.MOVE_EAST, StringComparison.CurrentCultureIgnoreCase))
+            else if (input.Equals(InputCommandList.MOVE_EAST, StringComparison.CurrentCultureIgnoreCase) || input.Equals("d"))
             {
                 TileController.MoveEast();
             }
-            else if (input.Equals(InputCommandList.MOVE_WEST, StringComparison.CurrentCultureIgnoreCase))
+            else if (input.Equals(InputCommandList.MOVE_WEST, StringComparison.CurrentCultureIgnoreCase) || input.Equals("a"))
             {
                 TileController.MoveWest();
             }
-            else if (input.Equals(InputCommandList.MOVE_SOUTH, StringComparison.CurrentCultureIgnoreCase))
+            else if (input.Equals(InputCommandList.MOVE_SOUTH, StringComparison.CurrentCultureIgnoreCase) || input.Equals("s"))
             {
                 TileController.MoveSouth();
             }
@@ -47,6 +47,10 @@ namespace TextBasedGameEngine
             else if (input.Equals(InputCommandList.STATUS, StringComparison.CurrentCultureIgnoreCase))
             {
                 TileController.Status();
+            }
+            else if (input.Equals(InputCommandList.INVENTORY, StringComparison.CurrentCultureIgnoreCase) || input.Equals("i"))
+            {
+                TileController.Inventory();
             }
             else
             {

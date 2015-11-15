@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using TextBasedGameEngine.Player;
 using TextBasedGameEngine.Utilities;
 using TextBasedGameEngine.Interfaces;
+using TextBasedGameEngine.Inventory;
 
 namespace TextBasedGameEngine.Tiles
 {
@@ -92,8 +93,14 @@ namespace TextBasedGameEngine.Tiles
             Writer.WriteLine("Status Modifier: " + player.StatusEffectModifier);
             Writer.WriteLine("Armor: " + player.Armor);
             Writer.WriteLine("Weapon Power: " + player.WeaponPower);
-            Writer.WriteLine("Magic Power: " + player.Magic + "\n");
+            Writer.WriteLine("Magic Power: " + player.Magic);
             player.Inventory.PrintInventory();
+            Writer.WriteLine("Gold: " + player.Gold + "\n");
+        }
+
+        public static void Inventory()
+        {
+            player.Inventory.HandleInventory();
         }
     }
 }

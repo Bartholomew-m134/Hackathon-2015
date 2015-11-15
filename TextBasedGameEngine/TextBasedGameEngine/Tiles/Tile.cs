@@ -19,6 +19,7 @@ namespace TextBasedGameEngine.Tiles
         public Tile(string lookText, List<IEnemy> enemies, List<IItem> storeItems)
         {
             enemyList = enemies;
+            storeItemList = storeItems;
             this.lookText = lookText;
         }
 
@@ -35,9 +36,10 @@ namespace TextBasedGameEngine.Tiles
 
         public void Shop(IPlayer player)
         {
-            if (storeItemList.Count > 0)
+            if (storeItemList != null)
             {
-                ShopManager shop = new ShopManager(player, storeItemList);
+                Writer.WriteLine("Test");
+                ShopHandler shop = new ShopHandler(player, storeItemList);
                 shop.ManageShop();
             }
         }

@@ -9,7 +9,7 @@ namespace TextBasedGameEngine.Shops
 {
     public static class ShopParser
     {
-        public static bool ParseShop(ShopManager shop, string input)
+        public static bool ParseShop(ShopHandler shop, string input)
         {
             bool validCommand = true;
             if (input.Equals(ShopCommandList.LOOK, StringComparison.CurrentCultureIgnoreCase))

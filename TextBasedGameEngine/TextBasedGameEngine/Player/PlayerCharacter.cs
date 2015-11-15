@@ -5,13 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using TextBasedGameEngine.Utilities;
 using TextBasedGameEngine.Interfaces;
+using TextBasedGameEngine.Inventory;
 
 namespace TextBasedGameEngine.Player
 {
     public class PlayerCharacter : IPlayer
     {
         private Location playerLocation;
-        private Inventory inventory;
+        private InventoryHandler inventory;
         private int health;
         private int maxHealth;
         private int weaponPower;
@@ -25,7 +26,7 @@ namespace TextBasedGameEngine.Player
         public PlayerCharacter()
         {
             playerLocation = new Location(1, 1);
-            inventory = new Inventory();
+            inventory = new InventoryHandler();
             health = 100;
             maxHealth = 100;
             weaponPower = 10;
@@ -34,7 +35,7 @@ namespace TextBasedGameEngine.Player
             heal = 20;
             hasStatus = false;
             statusModifier = 0;
-            gold = 0;
+            gold = 10;
         }
 
         public int Health
@@ -109,7 +110,7 @@ namespace TextBasedGameEngine.Player
             set { gold = value; }
         }
 
-        public Inventory Inventory
+        public InventoryHandler Inventory
         {
             get { return inventory; }
             set { inventory = value; }

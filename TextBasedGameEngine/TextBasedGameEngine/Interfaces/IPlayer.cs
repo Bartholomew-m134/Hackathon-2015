@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TextBasedGameEngine.Utilities;
+using TextBasedGameEngine.Inventory;
 
 namespace TextBasedGameEngine.Interfaces
 {
@@ -71,7 +72,7 @@ namespace TextBasedGameEngine.Interfaces
 
         void HandleStatusEffect();
 
-        Inventory Inventory
+        InventoryHandler Inventory
         {
             get ;
             set;

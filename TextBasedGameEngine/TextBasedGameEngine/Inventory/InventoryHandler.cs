@@ -5,16 +5,40 @@ using System.Text;
 using System.Threading.Tasks;
 using TextBasedGameEngine.Interfaces;
 
-namespace TextBasedGameEngine
+namespace TextBasedGameEngine.Inventory
 {
-    public class Inventory
+    public class InventoryHandler
     {
         private List<IItem> itemList;
         private const int MAX_COUNT = 5;
 
-        public Inventory()
+        public InventoryHandler()
         {
             itemList = new List<IItem>();
+        }
+
+        public void HandleInventory()
+        {
+            PrintInventory();
+            Writer.WriteLine("Enter an items index number, or exit with 5");
+            int input = -1;
+            
+            while (input != 5)
+            {
+                try
+                {
+                    input = Convert.ToInt32(Console.ReadLine());
+                }
+                catch
+                {
+                    Console.WriteLine("Invalid Input\n");
+                }
+                if (input < itemList.Count && input >= 0)
+                {
+                    UseItem(input);
+                }
+
+            }
         }
 
         public void AddItem(IItem item)
@@ -31,10 +55,10 @@ namespace TextBasedGameEngine
 
         public void UseItem(int index)
         {
-            if (index - 1 < itemList.Count)
+            if (index< itemList.Count)
             {
                 Writer.WriteLine("Used " + itemList[index].Name);
-                itemList.RemoveAt(index - 1);
+                itemList.RemoveAt(index);
             }
             else
             {
