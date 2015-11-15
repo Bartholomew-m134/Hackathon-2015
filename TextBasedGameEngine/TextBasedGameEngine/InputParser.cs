@@ -44,9 +44,9 @@ namespace TextBasedGameEngine
             {
                 Instructions.PrintControls();
             }
-            else if (input.Equals(InputCommandList.MOVE_WEST, StringComparison.CurrentCultureIgnoreCase))
+            else if (input.Equals(InputCommandList.STATUS, StringComparison.CurrentCultureIgnoreCase))
             {
-                //TileController.Status();
+                TileController.Status();
             }
             else
             {

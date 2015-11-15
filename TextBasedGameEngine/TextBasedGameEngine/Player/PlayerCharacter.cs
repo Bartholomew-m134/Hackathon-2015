@@ -80,6 +80,7 @@ namespace TextBasedGameEngine.Player
 
         public int StatusEffectModifier
         {
+            get { return statusModifier; }
             set { statusModifier = value; }
         }
 
