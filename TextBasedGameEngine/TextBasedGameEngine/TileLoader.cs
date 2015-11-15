@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TextBasedGameEngine.Enemy;
 using TextBasedGameEngine.Interfaces;
+using TextBasedGameEngine.Items;
 using TextBasedGameEngine.Tiles;
 using TextBasedGameEngine.Utilities;
 using TextBasedGameEngine.Utilities.Constants;
@@ -165,17 +166,13 @@ namespace TextBasedGameEngine
 
             for (int i = 0; i < itemsString.Length; i++)
             {
-                if (itemsString[i].Equals('G'))
+                if (itemsString[i].Equals('P'))
                 {
-                    //storeItemList.Add(new Goblin());
+                    storeItemList.Add(new HealthPotion());
                 }
-                else if (itemsString[i].Equals('C'))
+                else if (itemsString[i].Equals('B'))
                 {
-                   //storeItemList.Add(new Chicken());
-                }
-                else if (itemsString[i].Equals('W'))
-                {
-                    //storeItemList.Add(new Wyvern());
+                   storeItemList.Add(new HealingBooster());
                 }
             }
 
