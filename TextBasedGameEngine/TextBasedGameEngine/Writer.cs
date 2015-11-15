@@ -30,5 +30,10 @@ namespace TextBasedGameEngine
         {
             Console.WriteLine(NOT_ABAILABLE_COMMAND_TEXT);
         }
+
+        public static void ClearScreen()
+        {
+            Console.Clear();
+        }
     }
 }

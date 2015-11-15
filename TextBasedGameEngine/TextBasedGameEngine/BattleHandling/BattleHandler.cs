@@ -33,9 +33,11 @@ namespace TextBasedGameEngine.BattleHandling
             }
             if (player.Health <= 0)
             {
+                
+                Writer.ClearScreen();
                 Writer.WriteLine("Player has been defeated.");
                 TileController.Load();
-                Instructions.PrintControls();
+                TileController.Look();
             }
             else
             {
