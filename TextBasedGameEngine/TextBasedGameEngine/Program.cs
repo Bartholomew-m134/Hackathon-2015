@@ -13,6 +13,8 @@ namespace TextBasedGameEngine
         {
             TileController.Load();
 
+            Console.Title = "Hackathon 2015 Text Based Game Engine";
+
             while(true)
                 Reader.ReadInput(); 
         }
