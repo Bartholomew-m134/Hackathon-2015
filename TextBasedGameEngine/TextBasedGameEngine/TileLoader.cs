@@ -71,7 +71,8 @@ namespace TextBasedGameEngine
                         tile = new GrasslandGoblinTile();
                     }
                     if(tile != null)
-                        tiles.Add(new KeyValuePair<int,int>(i+1,j+1), tile);
+                        tiles.Add(new KeyValuePair<int,int>(j+1,i+1), tile);
+
                 }
             }
 
