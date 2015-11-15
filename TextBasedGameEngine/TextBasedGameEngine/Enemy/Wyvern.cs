@@ -50,6 +50,7 @@ namespace TextBasedGameEngine.Enemy
         {
             player.Health -= power;
             player.StatusEffect = true;
+            player.StatusModifier = -5;
         }
     }
 }

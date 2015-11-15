@@ -27,6 +27,7 @@ namespace TextBasedGameEngine.BattleHandling
                 Writer.WriteLine("Options: Melee Magic Heal");
                 HandlePlayerAction();
                 HandleEnemyAction();
+                HandleStatusEffect();
             }
             if (player.Health == 0)
             {
@@ -49,15 +50,22 @@ namespace TextBasedGameEngine.BattleHandling
         {
             if (enemy.Hostile && enemy.Health > 0)
                 player.Health -= enemy.AttackPower;
+        }
+
+        private void HandleStatusEffect()
+        {
             enemy.HandleMagicBurn();
+            player.HandleStatusEffect();
         }
 
         public void Melee()
         {
+            Writer.WriteLine("Player hits enemy for " + player.Power);
             enemy.Health -= player.Power;
         }
 
         public void Magic(){
+            Writer.WriteLine("Player strikes enemy for " + player.Magic + ", and applies a burn");
             enemy.Health -= player.Magic;
             enemy.HitWithMagic = true;
         }
@@ -65,6 +73,9 @@ namespace TextBasedGameEngine.BattleHandling
         public void Heal()
         {
             player.Health += 20;
+            player.StatusEffect = false;
+            player.StatusModifier = 0;
+            Writer.WriteLine("Player heals enemy for " + 20 + " and removes status.");
             if (player.Health >= 100)
             {
                 player.Health = 100;

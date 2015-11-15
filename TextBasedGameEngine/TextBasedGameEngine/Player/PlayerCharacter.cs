@@ -15,7 +15,9 @@ namespace TextBasedGameEngine.Player
         private int maxHealth;
         private int power;
         private int magic;
+        private int heal;
         private bool statusEffect;
+        private int statusModifier;
 
         public PlayerCharacter()
         {
@@ -24,6 +26,9 @@ namespace TextBasedGameEngine.Player
             maxHealth = 100;
             power = 20;
             magic = 16;
+            heal = 20;
+            statusEffect = false;
+            statusModifier = 0;
         }
 
         public int Health
@@ -61,6 +66,25 @@ namespace TextBasedGameEngine.Player
         {
             get { return statusEffect; }
             set { statusEffect = value; }
+        }
+
+
+        public int StatusModifier
+        {
+            set { statusModifier = value; }
+        }
+
+
+        public void HandleStatusEffect()
+        {
+            health += statusModifier;
+        }
+
+
+        public int Heal
+        {
+            get { return heal; }
+            set { heal = value; }
         }
     }
 }

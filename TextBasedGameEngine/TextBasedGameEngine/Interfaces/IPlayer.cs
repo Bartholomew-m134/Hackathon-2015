@@ -37,10 +37,23 @@ namespace TextBasedGameEngine.Interfaces
             get;
         }
 
+        int Heal
+        {
+            get;
+            set;
+        }
+
         bool StatusEffect
         {
             get;
             set;
         }
+
+        int StatusModifier
+        {
+            set;
+        }
+
+        void HandleStatusEffect();
     }
 }
