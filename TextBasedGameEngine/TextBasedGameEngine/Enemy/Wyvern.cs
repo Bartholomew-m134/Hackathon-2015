@@ -9,6 +9,7 @@ namespace TextBasedGameEngine.Enemy
 {
     public class Wyvern : IEnemy
     {
+        private const string NAME = "Wyvern";
         private int power = 40;
         private int health = 120;
         private bool isHitWithMagic = false;
@@ -16,6 +17,11 @@ namespace TextBasedGameEngine.Enemy
         public int AttackPower
         {
             get { return power; }
+        }
+
+        public string Name
+        {
+            get { return NAME; }
         }
 
         public int Health

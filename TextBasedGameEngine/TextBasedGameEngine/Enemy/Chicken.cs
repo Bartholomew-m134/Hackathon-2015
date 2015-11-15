@@ -9,6 +9,7 @@ namespace TextBasedGameEngine.Enemy
 {
     public class Chicken : IEnemy
     {
+        private const string NAME = "Chicken";
         private int power = 2;
         private int health = 6;
         private bool isHitWithMagic = false;
@@ -16,6 +17,11 @@ namespace TextBasedGameEngine.Enemy
         public int AttackPower
         {
             get { return power; }
+        }
+
+        public string Name
+        {
+            get { return NAME; }
         }
 
         public int Health

@@ -10,6 +10,11 @@ namespace TextBasedGameEngine.Interfaces
     {
         void Attack(IPlayer player);
 
+        string Name
+        {
+            get;
+        }
+
         int AttackPower
         {
             get;

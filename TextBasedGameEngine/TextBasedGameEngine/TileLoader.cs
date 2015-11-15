@@ -76,7 +76,6 @@ namespace TextBasedGameEngine
                     else if (tileInfo[0].Equals("g"))
                     {
                         tile = new GrasslandTile(enemies);
-                        Console.WriteLine("Grass");
                     }
 
                     if(tile != null)
@@ -90,14 +89,12 @@ namespace TextBasedGameEngine
         private static List<IEnemy> CreateNewEnemies(string enemyString)
         {
             List<IEnemy> enemyList = new List<IEnemy>();
-            Console.WriteLine(enemyString);
 
             for (int i = 0; i < enemyString.Length; i++)
             {
                 if(enemyString[i].Equals('G'))
                 {
                     enemyList.Add(new Goblin());
-                    Console.WriteLine(enemyString);
                 }
                 else if (enemyString[i].Equals('C'))
                 {

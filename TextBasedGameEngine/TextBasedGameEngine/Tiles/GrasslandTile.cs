@@ -38,7 +38,7 @@ namespace TextBasedGameEngine.Tiles
 
             foreach (IEnemy enemy in enemyList)
             {
-                Writer.WriteLine("You see a " + enemy);
+                Writer.WriteLine("You see a " + enemy.Name);
             }
         }
     }

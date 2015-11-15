@@ -44,7 +44,10 @@ namespace TextBasedGameEngine.Tiles
             {
                 tile = tileList[new KeyValuePair<int, int>(player.Position.X, player.Position.Y - 1)];
                 player.Position.Y--;
+                Look();
             }
+            else
+                Writer.OutputNotAvailableCommand();
         }
 
         public static void MoveSouth()
@@ -53,7 +56,10 @@ namespace TextBasedGameEngine.Tiles
             {
                 tile = tileList[new KeyValuePair<int, int>(player.Position.X, player.Position.Y + 1)];
                 player.Position.Y++;
+                Look();
             }
+            else
+                Writer.OutputNotAvailableCommand();
         }
 
         public static void MoveWest()
@@ -62,7 +68,10 @@ namespace TextBasedGameEngine.Tiles
             {
                 tile = tileList[new KeyValuePair<int, int>(player.Position.X - 1, player.Position.Y)];
                 player.Position.X--;
+                Look();
             }
+            else
+                Writer.OutputNotAvailableCommand();
         }
 
         public static void MoveEast()
@@ -71,7 +80,10 @@ namespace TextBasedGameEngine.Tiles
             {
                 tile = tileList[new KeyValuePair<int, int>(player.Position.X + 1, player.Position.Y)];
                 player.Position.X++;
+                Look();
             }
+            else
+                Writer.OutputNotAvailableCommand();
         }
     }
 }
