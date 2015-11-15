@@ -85,5 +85,13 @@ namespace TextBasedGameEngine.Tiles
             else
                 Writer.OutputNotAvailableCommand();
         }
+
+        public static void Status()
+        {
+            Writer.WriteLine("\nHealth: " + player.Health + "/" + player.MaxHealth);
+            Writer.WriteLine("Status Modifier: " + player.StatusEffectModifier);
+            Writer.WriteLine("Armor: " + player.Armor);
+            Writer.WriteLine("Weapon Power: " + player.WeaponPower + "\n");
+        }
     }
 }

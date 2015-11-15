@@ -58,6 +58,7 @@ namespace TextBasedGameEngine.Interfaces
 
         int StatusEffectModifier
         {
+            get;
             set;
         }
 
