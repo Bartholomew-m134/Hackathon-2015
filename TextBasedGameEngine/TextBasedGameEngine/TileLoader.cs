@@ -66,6 +66,10 @@ namespace TextBasedGameEngine
                     {
                         tile = new SampleTile();
                     }
+                    else if (tileList[i][j].Equals("GrasslandGoblinTile"))
+                    {
+                        tile = new GrasslandGoblinTile();
+                    }
                     if(tile != null)
                         tiles.Add(new KeyValuePair<int,int>(i+1,j+1), tile);
                 }
