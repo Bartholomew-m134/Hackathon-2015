@@ -27,6 +27,8 @@ namespace TextBasedGameEngine.Tiles
             {
                 BattleHandler battle = new BattleHandler(player, enemyList.First());
                 battle.HandleBattle();
+                if (enemyList.First().Health <= 0)
+                    enemyList.RemoveAt(0);
             }
         }
 

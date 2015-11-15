@@ -91,7 +91,8 @@ namespace TextBasedGameEngine.Tiles
             Writer.WriteLine("\nHealth: " + player.Health + "/" + player.MaxHealth);
             Writer.WriteLine("Status Modifier: " + player.StatusEffectModifier);
             Writer.WriteLine("Armor: " + player.Armor);
-            Writer.WriteLine("Weapon Power: " + player.WeaponPower + "\n");
+            Writer.WriteLine("Weapon Power: " + player.WeaponPower);
+            Writer.WriteLine("Magic Power: " + player.Magic + "\n");
         }
     }
 }

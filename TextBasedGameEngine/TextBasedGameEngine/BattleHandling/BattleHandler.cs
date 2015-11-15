@@ -36,6 +36,7 @@ namespace TextBasedGameEngine.BattleHandling
             else
             {
                 Writer.WriteLine("Enemy has been defeated.");
+                enemy.Loot(player);
             }
         }
 
@@ -48,7 +49,8 @@ namespace TextBasedGameEngine.BattleHandling
 
         private void HandleEnemyAction()
         {
-            enemy.Attack(player);
+            if(enemy.Health > 0)
+                enemy.Attack(player);
         }
 
         private void HandleStatusEffect()
