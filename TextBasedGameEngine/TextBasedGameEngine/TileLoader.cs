@@ -109,21 +109,51 @@ namespace TextBasedGameEngine
         private static List<IEnemy> CreateNewEnemies(string enemyString)
         {
             List<IEnemy> enemyList = new List<IEnemy>();
+            string[] enemies = enemyString.Split(';');
 
-            for (int i = 0; i < enemyString.Length; i++)
+            for (int i = 0; i < enemies.Length; i++)
             {
-                if(enemyString[i].Equals('G'))
+                if(enemies[i].Equals("G"))
                 {
                     enemyList.Add(new Goblin());
                 }
-                else if (enemyString[i].Equals('C'))
+                else if (enemies[i].Equals("Ch"))
                 {
                     enemyList.Add(new Chicken());
                 }
-                else if (enemyString[i].Equals('W'))
+                else if (enemies[i].Equals("Wy"))
                 {
                     enemyList.Add(new Wyvern());
                 }
+                else if (enemies[i].Equals("Ce"))
+                {
+                    enemyList.Add(new Centaur());
+                }
+                else if (enemies[i].Equals("Tr"))
+                {
+                    enemyList.Add(new Troll());
+                }
+                else if (enemies[i].Equals("Gc"))
+                {
+                    enemyList.Add(new GiantCrab());
+                }
+                else if (enemies[i].Equals("Al"))
+                {
+                    enemyList.Add(new ArmoredLizard());
+                }
+                else if (enemies[i].Equals("Dr"))
+                {
+                    enemyList.Add(new Dragon());
+                }
+                else if (enemies[i].Equals("D"))
+                {
+                    enemyList.Add(new Demon());
+                }
+                else if (enemies[i].Equals("Aw"))
+                {
+                    enemyList.Add(new AngryWizard());
+                }
+
             }
 
             return enemyList;
