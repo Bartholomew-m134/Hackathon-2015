@@ -52,6 +52,10 @@ namespace TextBasedGameEngine
             {
                 TileController.Inventory();
             }
+            else if (input.Equals(InputCommandList.MAP, StringComparison.CurrentCultureIgnoreCase) || input.Equals("m"))
+            {
+                TileController.Map();
+            }
             else
             {
                 Writer.OutputInvalidCommand();

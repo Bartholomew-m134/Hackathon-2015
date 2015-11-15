@@ -75,6 +75,7 @@
     <Compile Include="Tiles\TileController.cs" />
     <Compile Include="Utilities\BattleCommandList.cs" />
     <Compile Include="Utilities\Constants\TileLookConstants.cs" />
+    <Compile Include="Utilities\Constants\WorldConstants.cs" />
     <Compile Include="Utilities\InputCommandList.cs" />
     <Compile Include="Utilities\Location.cs" />
     <Compile Include="Utilities\ShopCommandList.cs" />

@@ -7,6 +7,7 @@ using TextBasedGameEngine.Player;
 using TextBasedGameEngine.Utilities;
 using TextBasedGameEngine.Interfaces;
 using TextBasedGameEngine.Inventory;
+using TextBasedGameEngine.Utilities.Constants;
 
 namespace TextBasedGameEngine.Tiles
 {
@@ -15,10 +16,12 @@ namespace TextBasedGameEngine.Tiles
         private static IPlayer player;
         private static ITile tile;
         private static Dictionary<KeyValuePair<int,int>, ITile> tileList;
+        private static List<KeyValuePair<int, int>> prevVisitedTiles;
 
 
         public static void Load()
         {
+            prevVisitedTiles = new List<KeyValuePair<int, int>>();
             tileList = TileLoader.Load("Tiles");
             player = new PlayerCharacter();
             tile = tileList[new KeyValuePair<int,int>(1,1)];
@@ -43,9 +46,14 @@ namespace TextBasedGameEngine.Tiles
 
         public static void MoveNorth()
         {
-            if (tileList.ContainsKey(new KeyValuePair<int, int>(player.Position.X, player.Position.Y - 1)))
+            KeyValuePair<int,int> newLocation = new KeyValuePair<int,int>(player.Position.X, player.Position.Y - 1);
+
+            if (tileList.ContainsKey(newLocation))
             {
-                tile = tileList[new KeyValuePair<int, int>(player.Position.X, player.Position.Y - 1)];
+                if(!prevVisitedTiles.Contains(player.Position.ConvertToPair()))
+                    prevVisitedTiles.Add(player.Position.ConvertToPair());
+
+                tile = tileList[newLocation];
                 player.Position.Y--;
                 Look();
             }
@@ -55,9 +63,14 @@ namespace TextBasedGameEngine.Tiles
 
         public static void MoveSouth()
         {
-            if (tileList.ContainsKey(new KeyValuePair<int, int>(player.Position.X, player.Position.Y + 1)))
+            KeyValuePair<int, int> newLocation = new KeyValuePair<int, int>(player.Position.X, player.Position.Y + 1);
+
+            if (tileList.ContainsKey(newLocation))
             {
-                tile = tileList[new KeyValuePair<int, int>(player.Position.X, player.Position.Y + 1)];
+                if (!prevVisitedTiles.Contains(player.Position.ConvertToPair()))
+                    prevVisitedTiles.Add(player.Position.ConvertToPair());
+
+                tile = tileList[newLocation];
                 player.Position.Y++;
                 Look();
             }
@@ -67,9 +80,14 @@ namespace TextBasedGameEngine.Tiles
 
         public static void MoveWest()
         {
-            if (tileList.ContainsKey(new KeyValuePair<int, int>(player.Position.X - 1, player.Position.Y)))
+            KeyValuePair<int, int> newLocation = new KeyValuePair<int, int>(player.Position.X - 1, player.Position.Y);
+
+            if (tileList.ContainsKey(newLocation))
             {
-                tile = tileList[new KeyValuePair<int, int>(player.Position.X - 1, player.Position.Y)];
+                if (!prevVisitedTiles.Contains(player.Position.ConvertToPair()))
+                    prevVisitedTiles.Add(player.Position.ConvertToPair());
+
+                tile = tileList[newLocation];
                 player.Position.X--;
                 Look();
             }
@@ -79,9 +97,14 @@ namespace TextBasedGameEngine.Tiles
 
         public static void MoveEast()
         {
-            if (tileList.ContainsKey(new KeyValuePair<int, int>(player.Position.X + 1, player.Position.Y)))
+            KeyValuePair<int, int> newLocation = new KeyValuePair<int, int>(player.Position.X + 1, player.Position.Y);
+
+            if (tileList.ContainsKey(newLocation))
             {
-                tile = tileList[new KeyValuePair<int, int>(player.Position.X + 1, player.Position.Y)];
+                if (!prevVisitedTiles.Contains(player.Position.ConvertToPair()))
+                    prevVisitedTiles.Add(player.Position.ConvertToPair());
+
+                tile = tileList[newLocation];
                 player.Position.X++;
                 Look();
             }
@@ -104,6 +127,23 @@ namespace TextBasedGameEngine.Tiles
         {
             player.Inventory.HandleInventory();
             tile.Look(player);
+        }
+
+        public static void Map()
+        {
+            for (int i = 0; i < WorldConstants.WORLD_HEIGHT; i++)
+            {
+                for (int j = 0; j < WorldConstants.WORLD_WIDTH; j++)
+                {
+                    if (player.Position.X == j && player.Position.Y == i)
+                        Writer.Write("P");
+                    else if (prevVisitedTiles.Contains(new KeyValuePair<int, int>(j, i)))
+                        Writer.Write("O");
+                    else
+                        Writer.Write(" ");
+                }
+                Writer.WriteLine("");
+            }
         }
     }
 }
