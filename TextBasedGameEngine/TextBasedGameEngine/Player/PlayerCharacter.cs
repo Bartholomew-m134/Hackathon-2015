@@ -16,7 +16,7 @@ namespace TextBasedGameEngine.Player
 
         public PlayerCharacter()
         {
-            playerLocation = new Location(0, 0);
+            playerLocation = new Location(1, 1);
             health = 100;
             power = 20;
             magic = 16;
