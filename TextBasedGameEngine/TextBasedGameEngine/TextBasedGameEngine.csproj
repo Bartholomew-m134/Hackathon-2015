@@ -61,6 +61,7 @@
     <Compile Include="Interfaces\IItem.cs" />
     <Compile Include="Interfaces\IPlayer.cs" />
     <Compile Include="InputParser.cs" />
+    <Compile Include="Inventory.cs" />
     <Compile Include="Reader.cs" />
     <Compile Include="Player\PlayerCharacter.cs" />
     <Compile Include="Program.cs" />

@@ -11,6 +11,7 @@ namespace TextBasedGameEngine.Player
     public class PlayerCharacter : IPlayer
     {
         private Location playerLocation;
+        private Inventory inventory;
         private int health;
         private int maxHealth;
         private int weaponPower;
@@ -23,6 +24,7 @@ namespace TextBasedGameEngine.Player
         public PlayerCharacter()
         {
             playerLocation = new Location(1, 1);
+            inventory = new Inventory();
             health = 100;
             maxHealth = 100;
             weaponPower = 10;
@@ -96,6 +98,12 @@ namespace TextBasedGameEngine.Player
         {
             get { return heal; }
             set { heal = value; }
+        }
+
+        public Inventory Inventory
+        {
+            get { return inventory; }
+            set { inventory = value; }
         }
     }
 }
