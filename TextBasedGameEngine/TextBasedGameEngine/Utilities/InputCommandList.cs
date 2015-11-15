@@ -18,6 +18,7 @@ namespace TextBasedGameEngine.Utilities
         public const string MOVE_SOUTH = "Move South";
         public const string STATUS = "Status";
         public const string INVENTORY = "Inventory";
+        public const string MAP = "Map";
 
 
         public static List<string> CommandList()
@@ -37,6 +38,7 @@ namespace TextBasedGameEngine.Utilities
             list.Add(HELP);
 
             list.Add(INVENTORY);
+            list.Add(MAP);
 
             return list;
         }
