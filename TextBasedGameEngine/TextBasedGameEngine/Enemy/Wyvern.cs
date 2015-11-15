@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace TextBasedGameEngine.Enemy
 {
-    public class Goblin : IEnemy
+    public class Wyvern : IEnemy
     {
-        private int power = 10;
-        private int health = 40;
+        private int power = 40;
+        private int health = 120;
         private bool isHitWithMagic = false;
         private bool isHostile = true;
 
@@ -41,7 +41,7 @@ namespace TextBasedGameEngine.Enemy
         {
             if (isHitWithMagic)
             {
-                health -= 2;
+                health -= 5;
             }
         }
     }

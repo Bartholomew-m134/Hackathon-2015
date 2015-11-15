@@ -44,6 +44,8 @@
   <ItemGroup>
     <Compile Include="BattleHandling\BattleHandler.cs" />
     <Compile Include="BattleHandling\BattleParser.cs" />
+    <Compile Include="Enemy\Chicken.cs" />
+    <Compile Include="Enemy\Wyvern.cs" />
     <Compile Include="Enemy\IEnemy.cs" />
     <Compile Include="Enemy\Goblin.cs" />
     <Compile Include="Instructions.cs" />
@@ -69,7 +71,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Shops\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace TextBasedGameEngine.Enemy
 {
-    public class Goblin : IEnemy
+    public class Chicken : IEnemy
     {
-        private int power = 10;
-        private int health = 40;
+        private int power = 2;
+        private int health = 6;
         private bool isHitWithMagic = false;
-        private bool isHostile = true;
+        private bool isHostile = false;
 
         public int AttackPower
         {
