@@ -14,7 +14,7 @@ namespace TextBasedGameEngine
             TileController.Load();
 
             while(true)
-                Reader.ReadInput();
+                Reader.ReadInput(); 
         }
     }
 }
