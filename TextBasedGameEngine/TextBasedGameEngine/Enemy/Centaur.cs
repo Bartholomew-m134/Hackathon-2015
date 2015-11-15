@@ -10,7 +10,7 @@ namespace TextBasedGameEngine.Enemy
     public class Centaur : IEnemy
     {
         private const string NAME = "Centaur";
-        private int power = 35;
+        private int power = 30;
         private int health = 80;
         private bool isHitWithMagic = false;
 
@@ -39,6 +39,7 @@ namespace TextBasedGameEngine.Enemy
 
         public void HandleMagicBurn()
         {
+            health -= 4;
         }
 
         public void Attack(IPlayer player)

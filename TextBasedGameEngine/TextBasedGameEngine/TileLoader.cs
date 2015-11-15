@@ -59,9 +59,9 @@ namespace TextBasedGameEngine
         {
             Dictionary<KeyValuePair<int,int>, ITile> tiles = new Dictionary<KeyValuePair<int,int>,ITile>();
 
-            for (int i = 0; i < tileList.Count - 1; i++ )
+            for (int i = 0; i < tileList.Count; i++ )
             {
-                for (int j = 0; j < tileList[i].Length - 1; j++)
+                for (int j = 0; j < tileList[i].Length; j++)
                 {
                     string[] tileInfo = tileList[i][j].Split('-');
                     List<IEnemy> enemies = new List<IEnemy>();
@@ -96,6 +96,10 @@ namespace TextBasedGameEngine
                     else if (tileInfo[0].Equals("t"))
                     {
                         tile = new Tile(TileLookConstants.TOWN, enemies, storeItems);
+                    }
+                    else if (tileInfo[0].Equals("r"))
+                    {
+                        tile = new Tile(TileLookConstants.ROAD, enemies, storeItems);
                     }
 
 
