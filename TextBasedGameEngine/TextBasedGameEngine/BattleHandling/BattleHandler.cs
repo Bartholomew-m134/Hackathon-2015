@@ -23,7 +23,7 @@ namespace TextBasedGameEngine.BattleHandling
             int enemyHealth = enemy.Health;
             while (player.Health > 0 && enemy.Health > 0)
             {
-                Writer.WriteLine("Player: " + player.Health + "/" + player.MaxHealth + " Enemy: " + enemy.Health + "/" + enemyHealth);
+                Writer.WriteLine("\nPlayer: " + player.Health + "/" + player.MaxHealth + " Enemy: " + enemy.Health + "/" + enemyHealth);
                 Writer.WriteLine("Options: Melee Magic Heal");
                 HandlePlayerAction();
                 HandleEnemyAction();
@@ -48,8 +48,7 @@ namespace TextBasedGameEngine.BattleHandling
 
         private void HandleEnemyAction()
         {
-            if (enemy.Hostile && enemy.Health > 0)
-                player.Health -= enemy.AttackPower;
+            enemy.Attack(player);
         }
 
         private void HandleStatusEffect()
@@ -60,8 +59,8 @@ namespace TextBasedGameEngine.BattleHandling
 
         public void Melee()
         {
-            Writer.WriteLine("Player hits enemy for " + player.Power);
-            enemy.Health -= player.Power;
+            Writer.WriteLine("Player hits enemy for " + player.WeaponPower);
+            enemy.Health -= player.WeaponPower;
         }
 
         public void Magic(){
@@ -72,13 +71,13 @@ namespace TextBasedGameEngine.BattleHandling
 
         public void Heal()
         {
-            player.Health += 20;
-            player.StatusEffect = false;
-            player.StatusModifier = 0;
-            Writer.WriteLine("Player heals enemy for " + 20 + " and removes status.");
-            if (player.Health >= 100)
+            player.Health += player.Heal;
+            player.HasStatusEffect = false;
+            player.StatusEffectModifier = 0;
+            Writer.WriteLine("Player heals for " + player.Heal + ", and removes status ailment.");
+            if (player.Health >= player.MaxHealth)
             {
-                player.Health = 100;
+                player.Health = player.MaxHealth;
             }
         }
     }

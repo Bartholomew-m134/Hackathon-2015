@@ -44,6 +44,10 @@ namespace TextBasedGameEngine
             {
                 Instructions.PrintControls();
             }
+            else if (input.Equals(InputCommandList.MOVE_WEST, StringComparison.CurrentCultureIgnoreCase))
+            {
+                //TileController.Status();
+            }
             else
             {
                 Writer.OutputInvalidCommand();

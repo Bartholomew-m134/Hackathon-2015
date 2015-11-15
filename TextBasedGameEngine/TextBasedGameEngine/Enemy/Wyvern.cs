@@ -12,7 +12,6 @@ namespace TextBasedGameEngine.Enemy
         private int power = 40;
         private int health = 120;
         private bool isHitWithMagic = false;
-        private bool isHostile = true;
 
         public int AttackPower
         {
@@ -23,12 +22,6 @@ namespace TextBasedGameEngine.Enemy
         {
             get { return health; }
             set { health = value; }
-        }
-
-
-        public bool Hostile
-        {
-            get { return isHostile; }
         }
 
         public bool HitWithMagic
@@ -48,9 +41,12 @@ namespace TextBasedGameEngine.Enemy
 
         public void Attack(IPlayer player)
         {
-            player.Health -= power;
-            player.StatusEffect = true;
-            player.StatusModifier = -5;
+            int damage = power - player.Armor;
+            if(damage > 0)
+                player.Health -= damage;
+            player.HasStatusEffect = true;
+            player.StatusEffectModifier = -5;
+            Writer.WriteLine("Enemy damages player for " + damage + ", and applies a status for -5");
         }
     }
 }

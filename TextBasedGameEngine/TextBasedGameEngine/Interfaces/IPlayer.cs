@@ -27,8 +27,9 @@ namespace TextBasedGameEngine.Interfaces
             set;
         }
 
-        int Power
+        int WeaponPower
         {
+            set;
             get;
         }
 
@@ -43,13 +44,19 @@ namespace TextBasedGameEngine.Interfaces
             set;
         }
 
-        bool StatusEffect
+        int Armor
         {
             get;
             set;
         }
 
-        int StatusModifier
+        bool HasStatusEffect
+        {
+            get;
+            set;
+        }
+
+        int StatusEffectModifier
         {
             set;
         }
