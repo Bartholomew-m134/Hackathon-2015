@@ -18,6 +18,7 @@ namespace TextBasedGameEngine
             Writer.WriteLine("Move South/s - If possible, move south 1 tile location.");
             Writer.WriteLine("Move West/a - If possible, move west 1 tile location.");
             Writer.WriteLine("Move East/d - If possible, move east 1 tile location.");
+            Writer.WriteLine("Map/m - Display the previous visited locations.");
             Writer.WriteLine("Help/h - Reprint this list of instructions.\n");
         }
     }

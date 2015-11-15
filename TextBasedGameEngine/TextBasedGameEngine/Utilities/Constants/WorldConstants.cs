@@ -8,7 +8,7 @@ namespace TextBasedGameEngine.Utilities.Constants
 {
     public static class WorldConstants
     {
-        public const int WORLD_WIDTH = 9;
-        public const int WORLD_HEIGHT = 15;
+        public const int WORLD_WIDTH = 10;
+        public const int WORLD_HEIGHT = 16;
     }
 }
