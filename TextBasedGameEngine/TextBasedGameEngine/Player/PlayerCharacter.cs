@@ -35,7 +35,7 @@ namespace TextBasedGameEngine.Player
             heal = 20;
             hasStatus = false;
             statusModifier = 0;
-            gold = 10;
+            gold = 0;
         }
 
         public int Health

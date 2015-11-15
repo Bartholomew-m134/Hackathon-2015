@@ -61,7 +61,7 @@ namespace TextBasedGameEngine.Enemy
                 Writer.WriteLine("Player equips the Goblin Mail.");
                 player.Armor = 4;
             }
-            player.Gold += 2;
+            player.Gold += 3;
             Writer.WriteLine("\n");
         }
     }
