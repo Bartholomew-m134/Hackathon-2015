@@ -101,7 +101,18 @@ namespace TextBasedGameEngine
                     {
                         tile = new Tile(TileLookConstants.ROAD, enemies, storeItems);
                     }
-
+                    else if (tileInfo[0].Equals("w"))
+                    {
+                        tile = new Tile(TileLookConstants.WALL, enemies, storeItems);
+                    }
+                    else if (tileInfo[0].Equals("e"))
+                    {
+                        tile = new Tile(TileLookConstants.ENTRANCE, enemies, storeItems);
+                    }
+                    else if (tileInfo[0].Equals("f"))
+                    {
+                        tile = new Tile(TileLookConstants.FORTRESS, enemies, storeItems);
+                    }
 
                     if(tile != null)
                         tiles.Add(new KeyValuePair<int,int>(j+1,i+1), tile);

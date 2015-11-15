@@ -17,5 +17,6 @@ namespace TextBasedGameEngine.Utilities.Constants
         public const string ROAD = "You come across a well traveled path";
         public const string ENTRANCE = "You stand by a castle gate. You know better than to stand underneath";
         public const string FORTRESS = "A fortress. What were you expecting?";
+        public const string WALL = "A moss covered wall blocks your path";
     }
 }
